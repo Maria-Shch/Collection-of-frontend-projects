@@ -1,0 +1,790 @@
+body{
+	margin: 0px;
+}
+.div-container-title{
+	height: 90px;
+	background-color: #eeffe0;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.img-logo{
+	width: 80px;
+}
+.div-container-text-header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	margin-left: 10px;
+	margin-right: 10px; 
+}
+.p-header-green{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #248C00;
+	font-size: 36px;
+	font-family:Arial;
+	font-weight: bold;
+}
+.p-header-pink{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #EF3337;
+	font-size: 38px;
+	font-family:Arial;
+	font-weight: bold;
+}
+/*стили для текста в поле поиска*/
+form {
+  float: right;
+}
+.input-search{
+	background-color: #74ff3285;
+	width: 180px;
+	height: 30px;
+	padding-left: 15px;
+	border-radius: 42px;
+	border: 1px solid #74ff3285;
+	outline: none;
+	position: relative;
+	transition: .3s linear;
+}
+::-webkit-input-placeholder {
+	font-size: 15px;
+	color: #248C00;
+}
+input:focus {
+  width: 250px;
+}
+button {
+    display: none;
+}
+/*---------------------*/
+.nav-container-menu{
+	background-color: #97FD32;
+}
+.nav-container-menu a{
+	color:#FD3256;
+	font-size: 25px;
+	font-family: Arial;
+	font-weight: bold;
+	text-decoration: none;
+}
+.nav-container-menu a:hover{
+    color: #328017; /* Цвет ссылки при наведении на нее курсора мыши */
+}
+.nav-container-menu ul{
+	list-style-type: none;
+	padding: 0px;
+}
+.div-container-menu{
+	margin: 0 auto;
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.div-container-menu hr{
+	height: 35px;
+	color: #248C00;
+} 
+/*end haeder*/
+/*main*/
+main{
+	padding-top: 20px;
+}
+.div-name-pink{
+	width: 250px;
+	margin-left: 930px;
+	background-color: #FD3256;
+	padding: 5px;
+}
+.p-name-article{
+	color: #FFFFFF;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 25px;
+	margin: 0px;
+	text-align: center;
+}
+.hr-pink{
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	border-top: 2px solid #FD3256;
+	margin-bottom: 20px;
+}
+.div-container-main{
+	margin: 0 auto;
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	margin-bottom: 30px;
+}
+.div-container-img{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+.div-container-img img{
+	width: 350px;
+	border: 1px solid #00000017;
+	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	
+}
+.div-container-article{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.p-header-name-book{
+	color:#740D0D;
+	padding-left: 10px;
+	font-size: 27px;
+	font-family: Arial;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+.p-name-author{
+	color:#041c0bc4;
+	padding-left: 10px;
+	font-size: 20px;
+	font-family: Arial;
+	font-weight: bold;
+	margin-bottom: 7px;
+	margin-top: 10px;
+}
+.div-about-book{
+	margin-top: 25px;
+}
+.div-pink-about-book{
+	width: 120px;
+	background-color: #FD3256;
+	padding: 5px;
+}
+.p-header-about-book{
+	color: #FFFFFF;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 19px;
+	margin: 0px;
+	text-align: center;
+}
+.hr-pink-about-book{
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	border-top: 2px solid #FD3256;
+}
+.div-about-book-green{
+	background-color: #eeffe0;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.p-text-about-book{
+	text-align: justify;
+	margin: 0px;
+	color:#031e11d9;
+	font-size: 17px;
+	font-family: Arial;
+	font-weight: bold;
+}
+.div-buttom-order{
+	width: 100%;
+	margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+.p-text-oreder{
+	margin: 0px;
+	color:#000;
+	font-size: 17px;
+	font-family: Arial;
+	font-weight: bold;
+}
+.img-shop{
+	height: 50px;
+	margin: 5px;
+	border-radius: 10px;
+	border: 1px solid #00000038;
+	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+}
+.div-pink-order{
+	width: 150px;
+	height: 50px;
+	background-color: #FD3256;
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.hr-pink-order{
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	border-top: 2px solid #FD3256;
+}
+/*end main*/
+/*footer*/
+footer{
+	margin-top: 40px;
+	background-color: #92b86dd4;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.div-footer{
+	width: 48%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.div-footer p{
+	color: #091f12;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 15px;
+	margin: 5px;
+	text-align: center;
+}
+.img-network{
+	padding-top: 5px;
+	margin-left: 5px;
+	width: 27px;
+}
+/*медиа запросы*/
+/* iPads (горизонтальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : landscape){
+/*header-----------------------------*/
+body{
+	height: 100%;
+}
+.img-logo {
+    width: 80px;
+}
+.p-header-green {
+    font-size: 35px;
+    margin-right: 0px;
+}
+.p-header-pink {
+    font-size: 38px;
+}
+.div-container-menu{
+	width: 93%;
+	height: 65px;
+}
+.nav-container-menu a {
+    font-size: 27px;
+}
+.div-container-menu hr {
+    height: 28px;
+}
+.div-container-text-header {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.input-search{
+	width: 170px;
+}
+input:focus {
+  width: 230px;
+}
+/*end header-----------------------*/
+/*main-----------------------------*/
+.div-container-main {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.div-name-pink {
+    width: 220px;
+    margin-left: 760px;
+}
+.p-name-article {
+    font-size: 25px;
+}
+.div-container-img img {
+    width: 330px;
+}
+.div-container-article {
+    width: 55%;
+}
+.p-header-name-book {
+    font-size: 24px;
+    margin-top: 10px;
+}
+.p-name-author {
+    font-size: 18px;
+}
+.div-pink-about-book {
+    width: 100px;
+}
+.p-text-about-book {
+    font-size: 17px;
+}
+.img-shop {
+    height: 40px;
+}
+.div-pink-order {
+    width: 115px;
+    height: 45px;
+    padding: 3px;
+}
+.div-buttom-order {
+    margin-top: 20px;
+}
+.hr-pink-order {
+    margin-bottom: 15px;
+}
+.div-buttom-order {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.div-about-book {
+    margin-top: 15px;
+}
+.div-container-img {
+    margin-bottom: 15px;
+}
+/*end main--------------------*/
+/*footer-----------------------*/
+.div-footer{
+    width: 85%;
+}
+.div-footer p {
+    font-size: 18px;
+}
+.img-network {
+    width: 33px;
+}
+}
+/* iPads (вертикальная ) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+/*header-----------------------------*/
+body{
+    height: 100%;
+}
+.img-logo {
+    width: 70px;
+}
+.p-header-green {
+    font-size: 30px;
+    margin-right: 0px;
+}
+.p-header-pink {
+    font-size: 33px;
+}
+.div-container-menu{
+    width: 97%;
+    height: 50px;
+}
+.nav-container-menu a {
+    font-size: 21px;
+}
+.div-container-menu hr {
+    height: 25px;
+}
+.div-container-text-header {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.input-search{
+    width: 150px;
+}
+input:focus {
+  width: 180px;
+}
+/*end header-----------------------*/
+/*main-----------------------------*/
+.div-container-main {
+    margin: 0 auto;
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.div-name-pink {
+    width: 175px;
+    margin-left: 580px;
+}
+.p-name-article {
+    font-size: 21px;
+}
+.div-container-img img {
+    width: 300px;
+}
+.div-container-article {
+    width: 55%;
+}
+.p-header-name-book {
+    font-size: 22px;
+    margin-top: 10px;
+}
+.p-name-author {
+    font-size: 17px;
+}
+.div-pink-about-book {
+    width: 100px;
+}
+.p-text-about-book {
+    font-size: 16px;
+}
+.img-shop {
+    height: 31px;
+}
+.div-pink-order {
+    width: 115px;
+    height: 45px;
+    padding: 3px;
+}
+.div-buttom-order {
+    margin-top: 20px;
+}
+.hr-pink-order {
+    margin-bottom: 15px;
+}
+.div-buttom-order {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.div-about-book {
+    margin-top: 15px;
+}
+.div-container-img {
+    margin-bottom: 15px;
+}
+/*end main--------------------*/
+/*footer-----------------------*/
+.div-footer{
+    width: 85%;
+}
+.div-footer p {
+    font-size: 16px;
+}
+.img-network {
+    width: 33px;
+}
+}
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) { 
+/*header-------*/
+/*header-------*/
+.img-logo {
+    display: none;
+}
+.div-container-text-header {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.div-container-title {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 110px;
+}
+.p-header-green {
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.p-header-pink {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+.input-search {
+    width: 220px;
+    height: 30px;
+    padding: 0px;
+    padding-left: 40px;
+}
+input:focus {
+  width: 350px;
+}
+::-webkit-input-placeholder {
+	font-size: 18px;
+	color: #248C00;
+}
+.div-container-menu {
+    width: 95%;
+}
+.nav-container-menu a {
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.hr-del{
+	display: none;
+}
+.div-container-menu hr {
+    height: 15px;
+}
+/* end header--------------------------*/
+/* main--------------------------*/
+.div-container-main {
+    width: 95%;
+    flex-wrap: wrap;
+}
+.div-name-pink {
+    margin: 0 auto;
+    width: 200px;
+}
+.p-name-article {
+    font-size: 20px;
+}
+.div-container-img img {
+    width: 224px;
+ }
+ .div-container-article {
+    width: 95%;
+}
+.p-header-name-book {
+    font-size: 19px;
+}
+.p-name-author {
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.div-pink-order {
+    width: 100%;
+    height: 15px;
+    margin-bottom: 10px;
+}
+.div-buttom-order {
+    width: 100%;
+    flex-wrap: wrap;
+}
+.img-shop {
+    height: 34px;
+    margin: 1px;
+}
+.p-header-about-book {
+    font-size: 17px;
+}
+.div-pink-about-book {
+    width: 80px;
+}
+.p-text-about-book {
+    font-size: 16px;
+}
+/* end main--------------------------*/
+/* footer ------------------------*/
+.div-footer {
+    width: 93%;
+}
+.div-footer p {
+    font-size: 15px;
+}
+.img-network {
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 30px;
+}
+footer{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+}
+/* iPhone 6 (горизонтальная) ----------- */
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation: landscape) {
+/*header-----------------------------*/
+body{
+	height: 100%;
+}
+.img-logo {
+    width: 60px;
+    padding-top: 0px;
+}
+.p-header-green {
+    font-size: 28px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+}
+.p-header-pink {
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.div-container-title {
+    flex-wrap: wrap;
+    height: 70px;
+}
+.input-search {
+    height: 25px;
+}
+.div-container-text-header {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+/*стили для текста в поле поиска*/
+form {
+  float: right;
+}
+.input-search{
+	width: 127px;
+	padding-left: 6px;
+}
+input:focus {
+  width: 120px;
+}
+button {
+    display: none;
+}
+/*---------------------*/
+.div-container-menu {
+    width: 68%;
+}
+.nav-container-menu a {
+    font-size: 25px;
+    padding-bottom: 7px;
+    padding-top: 4px;
+}
+.hr-del{
+	display: none;
+}
+.div-container-menu hr {
+    height: 20px;
+}
+/*end header-----------------------*/
+/*main-----------------------------*/
+main {
+    padding-top: 10px;
+}
+.div-container-main {
+    margin: 0 auto;
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.div-name-pink {
+    width: 220px;
+    margin: 0 auto;
+}
+.p-name-article {
+    font-size: 22px;
+}
+.div-container-img img {
+    width: 265px;
+}
+.div-container-article {
+    width: 55%;
+}
+.p-header-name-book {
+    font-size: 22px;
+    margin-top: 10px;
+}
+.p-name-author {
+    font-size: 17px;
+}
+.div-pink-about-book {
+    width: 100px;
+}
+.p-text-about-book {
+    font-size: 16px;
+}
+.img-shop {
+    height: 40px;
+}
+.div-pink-order {
+    width: 115px;
+    height: 45px;
+    padding: 3px;
+}
+.div-pink-order {
+    width: 100%;
+    height: 15px;
+    margin-bottom: 10px;
+}
+.div-buttom-order {
+    width: 100%;
+    flex-wrap: wrap;
+}
+.img-shop {
+    height: 34px;
+    margin: 1px;
+}
+.p-header-about-book {
+    font-size: 17px;
+}
+.div-pink-about-book {
+    width: 80px;
+}
+.p-text-about-book {
+    font-size: 16px;
+}
+.hr-pink-order {
+		margin-bottom: 10px;
+}
+/*end main--------------------*/
+/*footer-----------------------*/
+.div-footer{
+    width: 85%;
+}
+.div-footer p {
+    font-size: 14px;
+}
+.img-network {
+    width: 27px;
+}
+}
+
+

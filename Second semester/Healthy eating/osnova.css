@@ -1,0 +1,149 @@
+body{
+	margin: 0px;
+}
+.div-container-title{
+	height: 90px;
+	background-color: #eeffe0;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.img-logo{
+	width: 80px;
+}
+.div-container-text-header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	margin-left: 10px;
+	margin-right: 10px; 
+}
+.p-header-green{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #248C00;
+	font-size: 36px;
+	font-family:Arial;
+	font-weight: bold;
+}
+.p-header-pink{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #EF3337;
+	font-size: 38px;
+	font-family:Arial;
+	font-weight: bold;
+}
+/*стили для текста в поле поиска*/
+form {
+  float: right;
+}
+.input-search{
+	background-color: #74ff3285;
+	width: 180px;
+	height: 30px;
+	padding-left: 15px;
+	border-radius: 42px;
+	border: 1px solid #74ff3285;
+	outline: none;
+	position: relative;
+	transition: .3s linear;
+}
+::-webkit-input-placeholder {
+	font-size: 15px;
+	color: #248C00;
+}
+input:focus {
+  width: 250px;
+}
+button {
+    display: none;
+}
+/*---------------------*/
+.nav-container-menu{
+	background-color: #97FD32;
+}
+.nav-container-menu a{
+	color:#FD3256;
+	font-size: 25px;
+	font-family: Arial;
+	font-weight: bold;
+	text-decoration: none;
+}
+.nav-container-menu a:hover{
+    color: #328017; /* Цвет ссылки при наведении на нее курсора мыши */
+}
+.nav-container-menu ul{
+	list-style-type: none;
+	padding: 0px;
+}
+.div-container-menu{
+	margin: 0 auto;
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.div-container-menu hr{
+	height: 35px;
+	color: #248C00;
+} 
+/*end haeder*/
+/*main*/
+
+
+
+
+
+
+
+
+
+/*end main*/
+/*footer*/
+footer{
+	margin-top: 40px;
+	background-color: #92b86dd4;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.div-footer{
+	width: 48%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.div-footer p{
+	color: #091f12;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 15px;
+	margin: 5px;
+	text-align: center;
+}
+.img-network{
+	padding-top: 5px;
+	margin-left: 5px;
+	width: 27px;
+}
+
+
+
+
+

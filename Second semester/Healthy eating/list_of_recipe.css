@@ -1,0 +1,615 @@
+body{
+	margin: 0px;
+}
+.div-container-title{
+	height: 90px;
+	background-color: #eeffe0;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.img-logo{
+	width: 80px;
+}
+.div-container-text-header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	margin-left: 10px;
+	margin-right: 10px; 
+}
+.p-header-green{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #248C00;
+	font-size: 36px;
+	font-family:Arial;
+	font-weight: bold;
+}
+.p-header-pink{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #EF3337;
+	font-size: 38px;
+	font-family:Arial;
+	font-weight: bold;
+}
+/*стили для текста в поле поиска*/
+form {
+  float: right;
+}
+.input-search{
+	background-color: #74ff3285;
+	width: 180px;
+	height: 30px;
+	padding-left: 15px;
+	border-radius: 42px;
+	border: 1px solid #74ff3285;
+	outline: none;
+	position: relative;
+	transition: .3s linear;
+}
+::-webkit-input-placeholder {
+	font-size: 15px;
+	color: #248C00;
+}
+input:focus {
+  width: 250px;
+}
+button {
+    display: none;
+}
+/*---------------------*/
+.nav-container-menu{
+	background-color: #97FD32;
+}
+.nav-container-menu a{
+	color:#FD3256;
+	font-size: 25px;
+	font-family: Arial;
+	font-weight: bold;
+	text-decoration: none;
+}
+.nav-container-menu a:hover{
+    color: #328017; /* Цвет ссылки при наведении на нее курсора мыши */
+}
+.nav-container-menu ul{
+	list-style-type: none;
+	padding: 0px;
+}
+.div-container-menu{
+	margin: 0 auto;
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.div-container-menu hr{
+	height: 35px;
+	color: #248C00;
+} 
+/*конец шапки*/
+/*main*/
+main{
+	padding-top: 20px;
+	background-image: url(https://vitaminyinfo.ru/sites/all/themes/vitaminy/images/vitamin-block-bg.jpg);
+    background-repeat: repeat;
+}
+.div-name-pink{
+	width: 250px;
+	margin-left: 318px;
+	background-color: #FD3256;
+	padding: 5px;
+}
+.p-name-article{
+	color: #FFFFFF;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 25px;
+	margin: 0px;
+	text-align: center;
+}
+.hr-pink{
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	border-top: 2px solid #FD3256;
+	margin-bottom: 20px;
+}
+.div-container-main{
+	margin: 0 auto;
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+
+}
+.article-container-row{
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+.div-container-element-row{
+	margin-right:  25px;
+	margin-bottom: 7px;
+	height: 220px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+.a-name-salad{
+	color:#a1102aeb;
+	padding-left: 10px;
+	font-size: 22px;
+	font-family: Arial;
+	font-weight: bold;
+	text-decoration: underline;
+	margin-bottom: 7px;
+	padding-top: 7px;
+}
+.div-container-element-row a:hover{
+    color: #FD3256; /* Цвет ссылки при наведении на нее курсора мыши */
+}
+.div-container-element-row img{
+	margin-bottom: 7px;
+	width: 270px;
+	border-radius: 20px;
+	border: 1px solid #00000017;
+	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+}
+.p-header-ingredients{
+	color:#023508;
+	font-size: 21px;
+	font-family: Arial;
+	font-weight: bold;
+	margin: 0px;
+}
+.p-ingredients-content{
+	color:#000000c7;
+	font-size: 20px;
+	font-family: Arial;
+}
+/*footer*/
+footer{
+	margin-top: 40px;
+	background-color: #92b86dd4;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.div-footer{
+	width: 48%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.div-footer p{
+	color: #091f12;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 15px;
+	margin: 5px;
+	text-align: center;
+}
+.img-network{
+	padding-top: 5px;
+	margin-left: 5px;
+	width: 27px;
+}
+/*медиа запросы*/
+/* iPads (горизонтальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : landscape){
+/*header-----------------------------*/
+body{
+	height: 100%;
+}
+.img-logo {
+    width: 80px;
+}
+.p-header-green {
+    font-size: 35px;
+    margin-right: 0px;
+}
+.p-header-pink {
+    font-size: 38px;
+}
+.div-container-menu{
+	width: 93%;
+	height: 65px;
+}
+.nav-container-menu a {
+    font-size: 27px;
+}
+.div-container-menu hr {
+    height: 28px;
+}
+.div-container-text-header {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.input-search{
+	width: 170px;
+}
+input:focus {
+  width: 230px;
+}
+/*end header-----------------------*/
+/*main-----------------------------*/
+.div-container-main{
+    width: 85%;
+}
+.p-name-article {
+    font-size: 25px;
+}
+.div-name-pink {
+    width: 240px;
+    margin-left: 152px;
+}
+.div-container-element-row img {
+    width: 260px;
+}
+.a-name-salad {
+    font-size: 24px;
+}
+/*end main--------------------*/
+/*footer-----------------------*/
+.div-footer{
+    width: 85%;
+}
+.div-footer p {
+    font-size: 18px;
+}
+.img-network {
+    width: 33px;
+}
+}
+/* iPads (вертикальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : portrait){
+/*header-----------------------------*/
+body{
+	height: 100%;
+}
+.img-logo {
+    width: 70px;
+}
+.p-header-green {
+    font-size: 30px;
+    margin-right: 0px;
+}
+.p-header-pink {
+    font-size: 33px;
+}
+.div-container-menu{
+	width: 97%;
+	height: 50px;
+}
+.nav-container-menu a {
+    font-size: 21px;
+}
+.div-container-menu hr {
+    height: 25px;
+}
+.div-container-text-header {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.input-search{
+	width: 150px;
+}
+input:focus {
+  width: 180px;
+}
+/*end header-----------------------*/
+/*main-----------------------------*/
+.div-container-main{
+    width: 85%;
+}
+.p-name-article {
+    font-size: 22px;
+}
+.div-name-pink {
+    width: 200px;
+    margin-left: 100px;
+}
+.div-container-element-row img {
+    width: 240px;
+}
+.a-name-salad {
+    font-size: 24px;
+}
+.p-ingredients-content {
+    font-size: 19px;
+}
+/*end main--------------------*/
+/*footer-----------------------*/
+.div-footer{
+    width: 85%;
+}
+.div-footer p {
+    font-size: 16px;
+}
+.img-network {
+    width: 33px;
+}
+}
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) { 
+/*header-------*/
+.img-logo {
+    display: none;
+}
+.div-container-text-header {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.div-container-title {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 110px;
+}
+.p-header-green {
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.p-header-pink {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+.input-search {
+    width: 220px;
+    height: 30px;
+    padding: 0px;
+    padding-left: 40px;
+}
+input:focus {
+  width: 350px;
+}
+::-webkit-input-placeholder {
+	font-size: 18px;
+	color: #248C00;
+}
+.div-container-menu {
+    width: 95%;
+}
+.nav-container-menu a {
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.hr-del{
+	display: none;
+}
+.div-container-menu hr {
+    height: 15px;
+}
+/* end header--------------------------*/
+/* main--------------------------*/
+.div-name-pink {
+    width: 200px;
+    margin: 0 auto;
+}
+.p-name-article {
+    font-size: 20px;
+}
+.div-container-row {
+	height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.a-name-salad {
+    font-size: 19px;
+    padding-top: 0px;
+    margin-right: 15px;
+    text-align: center;
+}
+.div-container-element-row img {
+    width: 170px;
+    margin-right: 10px;
+}
+.div-container-main {
+    margin: auto;
+    width: 95%;
+}
+.div-container-element-row {
+	margin-right: 0px;
+    height: 100%;
+    align-items: center;
+}
+.p-header-ingredients {
+	color: #023508d9;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.p-ingredients-content {
+	color: #000000e8;
+    font-size: 15px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+.article-container-row {
+    margin-bottom: 16px;
+    align-items: center;
+}
+/* end main--------------------------*/
+/* footer ------------------------*/
+.div-footer {
+    width: 93%;
+}
+.div-footer p {
+    font-size: 15px;
+}
+.img-network {
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 30px;
+}
+footer{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+}
+/* iPhone 6 (горизонтальная) ----------- */
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation: landscape) {
+/*header-----------------------------*/
+body{
+	height: 100%;
+}
+.img-logo {
+    width: 60px;
+    padding-top: 0px;
+}
+.p-header-green {
+    font-size: 28px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+}
+.p-header-pink {
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.div-container-title {
+    flex-wrap: wrap;
+    height: 70px;
+}
+.input-search {
+    height: 25px;
+}
+.div-container-text-header {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+/*стили для текста в поле поиска*/
+form {
+  float: right;
+}
+.input-search{
+	width: 127px;
+	padding-left: 6px;
+}
+input:focus {
+  width: 120px;
+}
+button {
+    display: none;
+}
+/*---------------------*/
+.div-container-menu {
+    width: 68%;
+}
+.nav-container-menu a {
+    font-size: 25px;
+    padding-bottom: 7px;
+    padding-top: 4px;
+}
+.hr-del{
+	display: none;
+}
+.div-container-menu hr {
+    height: 20px;
+}
+/*end header-----------------------*/
+/*main-----------------------------*/
+main {
+    padding-top: 10px;
+}
+.a-header-section {
+    width: 100%;
+}
+.div-container-main {
+    margin: 0 auto;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.div-name-pink {
+    width: 265px;
+    margin: 0 auto;
+}
+.p-name-article {
+    font-size: 22px;
+}
+.article-container {
+    width: 310px;
+}
+.div-container-text {
+    height: 150px;
+}
+.div-container-element-row img {
+    margin-bottom: 7px;
+    width: 227px;
+}
+.p-ingredients-content {
+    color: #000000c7;
+    font-size: 18px;
+    font-family: Arial;
+}
+.article-container-row {
+    margin-bottom: 0px;
+}
+.div-container-img span {
+    width: 90%;
+    padding-right: 5%;
+}
+.p-text-article {
+    font-size: 15px;
+}
+.div-container-img img {
+    height: 215px;
+}
+.div-container-img span {
+    font-size: 20px;
+}
+/*end main--------------------*/
+/*footer-----------------------*/
+.div-footer{
+    width: 85%;
+}
+.div-footer p {
+    font-size: 14px;
+}
+.img-network {
+    width: 27px;
+}
+}
+
+
+
+

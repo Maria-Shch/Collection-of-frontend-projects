@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Registration form</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="form-group">
+		<p class="header">
+			Заполните, пожалуйста, регистрационную форму. Обязательные для заполнения поля помечены здёздочкой:
+		</p>
+		
+		<form action="check.php" method="POST" enctype="multipart/form-data">
+			<p class="miniheader">
+				Личная информация
+			</p>
+			<label class="control-label required" for="surname">Фамилия</label><br>
+				<input type="text" name="surname" pattern="^[А-Яа-яЁё\s]+$" placeholder="Фамилия" required="required" class="form-control" >
+			<br><br>
+			<label class="control-label required" for="firstname">Имя</label><br>
+				<input type="text" name="firstname" pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" required="required" class="form-control" >
+			<br><br>
+			Отчество<br>
+				<input type="text" name="lastname"  placeholder="Отчество">
+			<br><br>
+			<label class="control-label required" for="sex">Пол</label><br><br>
+				<input type="radio" name="sex" value="male"  class="form-control"> Мужской
+			
+				<input type="radio" name="sex" value="female" checked > Женский
+			<br><br>
+			Цвет глаз:
+				<input type="color" name="my_color"> 
+			<br><br>
+			<label class="control-label required" for="new_day">Дата рождения</label><br>
+				<input type="date" name="new_day" required="required" class="form-control" > 
+			<br><br>
+			Возраст
+				<input type="number" name="quantity" min="18" max="100" step="1 "> 
+			<br><br>
+			<label class="control-label required" for="city">Место рождения (область, край, Республика или автономный округ)</label><br>
+				<input list="city"/ required="required" pattern="^[А-Яа-яЁё\s]+$" class="form-control">
+					<datalist id="city">
+						<option value="Амурская область"></option>
+						<option value="Архангельская область"></option>
+						<option value="Астраханская область"></option>
+						<option value="Белгородская область"></option>
+						<option value="Брянская область"></option>
+						<option value="Челябинская область"></option>
+						<option value="Иркутская область"></option>
+						<option value="Ивановская область"></option>
+						<option value="Калининградская область"></option>
+						<option value="Калужская область"></option>
+						<option value="Кемеровская область"></option>
+						<option value="Кировская область"></option>
+						<option value="Костромская область"></option>
+						<option value="Курганская область"></option>
+						<option value="Курская область"></option>
+						<option value="Ленинградская область"></option>
+						<option value="Липецкая область"></option>
+						<option value="Магаданская область"></option>
+						<option value="Московская область"></option>
+						<option value="Мурманская область"></option>
+						<option value="Нижегородская область"></option>
+						<option value="Новгородская область"></option>
+						<option value=" Новосибирская область"></option>
+						<option value="Омская область"></option>
+						<option value="Оренбургская область"></option>
+						<option value="Орловская область"></option>
+						<option value="Пензенская область"></option>
+						<option value="Псковская область "></option>
+						<option value="Ростовская область"></option>
+						<option value="Рязанская область "></option>
+						<option value="Сахалинская область"></option>
+						<option value="Самарская область"></option>
+						<option value="Саратовская область"></option>
+						<option value="Смоленская область "></option>
+						<option value="Свердловская область"></option>
+						<option value="Тамбовская область"></option>
+						<option value="Томская область"></option>
+						<option value="Тверская область"></option>
+						<option value="Тульская область"></option>
+						<option value="Тюменская область "></option>
+						<option value="Ульяновская область"></option>
+						<option value="Владимирская область"></option>
+						<option value="Волгоградская область "></option>
+						<option value="Вологодская область"></option>
+						<option value="Воронежская область"></option>
+						<option value="Ярославская область"></option>
+						<option value="Республика Адыгея"></option>
+						<option value="Республика Башкортостан"></option>
+						<option value="Республика Бурятия"></option>
+						<option value="Республика Алтай"></option>
+						<option value="Республика Дагестан"></option>
+						<option value="Республика Ингушетия"></option>
+						<option value="Кабардино-Балкарская Республика"></option>
+						<option value="Республика Калмыкия"></option>
+						<option value="Карачаево-Черкесская Республика"></option>
+						<option value="Республика Карелия"></option>
+						<option value="Республика Коми"></option>
+						<option value="Республика Марий Эл"></option>
+						<option value="Республика Мордовия"></option>
+						<option value="Республика Саха (Якутия)"></option>
+						<option value="Республика Северная Осетия - Алания"></option>
+						<option value="Республика Татарстан (Татарстан)"></option>
+						<option value="Республика Тыва"></option>
+						<option value="Удмуртская Республика"></option>
+						<option value="Республика Хакасия"></option>
+						<option value="Республика Хакасия"></option>
+						<option value="Чувашская Республика - Чувашия"></option>
+						<option value="Алтайский край"></option>
+						<option value="Краснодарский край"></option>
+						<option value="Красноярский край"></option>
+						<option value="Приморский край"></option>
+						<option value="Ставропольский край"></option>
+						<option value="Хабаровский край"></option>
+						<option value="Забайкальский край"></option>
+						<option value="Республика Крым"></option>
+						<option value="Еврейская автономная область"></option>
+						<option value="Ненецкий автономный округ"></option>
+						<option value="Ханты-Мансийский автономный округ - Югра"></option>
+						<option value="Чукотский автономный округ"></option>
+						<option value="Ямало-Ненецкий автономный округ"></option>
+					</datalist>
+			<br><br>
+			<label class="control-label required" for="photo">Скриншот первой страницы паспорта (файлы могут быть только формата jpeg)</label><br>
+				<input type="file" name="photo" multiple accept="image/jpeg" required="required" class="form-control">	
+			<br>
+			<p class="miniheader">
+				Контактная информация
+			</p>
+			<label class="control-label required" for="index">Индекс</label><br>
+				<input type="text" name="index" pattern="[0-9]{6}" required="required" class="form-control">
+			<br><br>
+			<p class="address">Домашний адрес</p>
+			<label class="control-label required" for="country">Страна</label><br>
+				<input type="text" name="country" pattern="^[А-Яа-яЁё\s]+$" required="required" class="form-control">
+			<br><br>	
+			 <label class="control-label required" for="cities">Город</label><br>
+				<input type="text" name="cities" pattern="^[А-Яа-яЁё\s]+$" required="required" class="form-control">
+			<br><br>	
+			 <label class="control-label required" for="street">Улица</label><br>
+				<input type="text" name="street" pattern="^[А-Яа-яЁё\s]+$" required="required" class="form-control">
+			<br><br>	
+			 <label class="control-label required" for="housenumber">Номер дома</label><br>
+				<input type="text" name="housenumber" pattern="^[0-9]+$" required="required" class="form-control">
+			<br><br>	
+			<label class="control-label required" for="flat">Номер квартиры</label><br>
+				<input type="text" name="flat" pattern="^[0-9]+$" required="required" class="form-control">
+			<br><br>
+			<label class="control-label required" for="my_number">Номер телефона в формате +7-ххх-ххх-хх-хх</label><br>
+				<input type="text" name="my_number" pattern="+7-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required="required" class="form-control">
+			<br><br>
+			<label class="control-label required" for="my_e_mail">E-mail</label><br>
+				<input type="email" name="my_e_mail"  required="required" class="form-control">
+			<br>
+			<p class="miniheader">
+				Общая информация
+			</p>
+			<label class="control-label required" for="local_time">Дата регистрации</label><br>
+				<input type="datetime-local" name="local_time" required="required" class="form-control"> 
+			<br><br>
+			Откуда вы узнали о нашем магазине?<br>
+				<input type="checkbox"> Социальные сети <br>
+				<input type="checkbox"> Телевидение<br>
+				<input type="checkbox"> От знакомых<br>
+				<input type="checkbox"> Поисковые системы<br>
+				<input type="checkbox"> Другое <br><br>
+				Если вы выбрали "Другое", пожалуйста, напишите свой вариант ниже:<br>
+				<textarea name="text"></textarea>
+			<br><br>
+				<input type="checkbox" name="consent" required="required" class="form-control">
+			<label class="control-label required" for="consent">Даю своё согласие на обработку и хранение персональных данных</label><br><br>
+			
+			<button type="submit" formaction="check.php">Отправить</button>
+			<button type="reset">Очистить</button> <br>
+		</form>
+	</div>
+
+</body>
+</html>

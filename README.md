@@ -1,2 +1,2 @@
-# Frontend-projects
- This repository contains all my front-end projects. All works can be viewed using GitHub Pages.
+# Maria-Shch.github.io
+Landing page. ''JavaScript for beginners''.

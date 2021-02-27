@@ -1,0 +1,41 @@
+label.required:after
+{
+    color: red;
+    content: " *";
+}
+html{
+	background-color: #69018e52;
+}
+div{
+	background-color: #fdeaff;
+	width: 70%;
+	margin: 0 auto;
+}
+form{
+	margin-left: 40px;
+	padding-bottom: 10px;
+}
+.header{
+	color:#9c0a41;
+	font-size: 25px;
+	font-family: Arial ;
+	text-align: center;
+	padding: 15px;
+	margin-bottom: 0px;
+}
+.miniheader{
+	color:#a60c23;
+	font-size: 20px;
+	font-family: Arial;
+	text-align: left;
+	margin-top: 13px;
+	margin-bottom: 13px;
+}
+.address{
+	color:#52064d;
+	font-size: 18px;
+	font-family: Arial;
+	text-align: left;
+	margin-top: 0px;
+	margin-bottom: 3px; 
+}
