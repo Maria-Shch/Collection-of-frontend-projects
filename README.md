@@ -1,2 +1,3 @@
 # Maria-Shch.github.io
-Landing page. ''JavaScript for beginners''.
+
+https://maria-shch.github.io/
