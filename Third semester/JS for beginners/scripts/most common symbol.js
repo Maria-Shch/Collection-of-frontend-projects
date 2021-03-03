@@ -47,12 +47,13 @@ function buttonRepeatResClick() {
     document.getElementById("inputString").value = '';
 }
 
-function searchChars(text) {
+//Ф-я принимает строку, возвращает Set с самым частовстречающемся символом/символами
+function searchChars(string) {
     let charMap = new Map();
     let max = 0;
     let setMax = new Set();
  
-    for (let char of text) { //Формую мапу (символ : частота символа в строке)
+    for (let char of string) { //Формирую Map (символ : частота символа в строке)
         if (charMap.has(char)) 
         {
             let x = charMap.get(char);
@@ -64,11 +65,11 @@ function searchChars(text) {
     }
 
     
-    for (let char of text) { //в max записываю самую высокую частоту
+    for (let char of string) { //в max записываю самую высокую частоту
         if (charMap.get(char) > max) max = charMap.get(char);
     }
 
-    for (let char of text) { //если значение совпадает с максимальной частотой, то добавляю ключ (символ) в set
+    for (let char of string) { //если значение совпадает с максимальной частотой, то добавляю ключ (символ) в Set
         if (charMap.get(char) == max) setMax.add(char);
     }
      
