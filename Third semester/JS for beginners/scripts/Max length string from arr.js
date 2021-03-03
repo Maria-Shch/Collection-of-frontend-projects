@@ -1,17 +1,21 @@
 //Функция принимает массив строк, выводит самую длинную
 
-let divML = document.getElementById('fieldest__d-2-resMaxLength');
+let divMLRes = document.getElementById('fieldest__d-2-resMaxLength');
+let divML = document.getElementById('fieldest__d-2-strings');
+
 buttonAddString.addEventListener("click", buttonAddStringClick);
 buttonDeleteString.addEventListener("click", buttonDeleteStringClick);
+buttonMaxLength.addEventListener("click", buttonMaxLengthClick);
 
 let arr=[];
 
 function buttonAddStringClick() {
-    arr.push(document.getElementById("inputStringArray").value);
+    if(document.getElementById("inputStringArray").value.trim() != ""){
+        arr.push(document.getElementById("inputStringArray").value.trim());
     
-    stringOutput();
-
-
+        stringOutput();
+    }
+    
     //Очищаю поле ввода
     document.getElementById("inputStringArray").value = '';
 }
@@ -27,4 +31,40 @@ function stringOutput() {
 
     pML.textContent = arr[arr.length-1];
     divML.appendChild(pML); 
+
+    //Перед добавлением, следующим после вывода результата, очищаю блок, хранящий результат
+    while (divMLRes.firstChild) {
+        divMLRes.removeChild(divMLRes.firstChild);
+    }
+}
+
+function buttonMaxLengthClick() {
+    //Удаляю предыдущую запись о рез-те
+    while (divMLRes.firstChild) {
+        divMLRes.removeChild(divMLRes.firstChild);
+    }
+
+    //Очищаю блок, хранящий введённые строки
+    while (divML.firstChild) {
+        divML.removeChild(divML.firstChild);
+    }
+
+    //нахожу длину самой длинной строки
+    let maxLength = arr.map(x => x.length).reduce((x, y) => x > y ? x : y, 0); 
+
+    //Массив со строками максимальной длины
+    let arrRes = [];
+
+    //Добавляю в массив все строки с максимальной длиной
+    arrRes = arr.filter(x => x.length == maxLength); 
+
+    arrRes.forEach(item => {
+        let pMLRes = document.createElement('p');
+        pMLRes.setAttribute("class", "res");
+        pMLRes.textContent = item ;
+        divMLRes.appendChild(pMLRes); 
+    });
+    
+    //Очищаю массив значений
+    arr = [];
 }
