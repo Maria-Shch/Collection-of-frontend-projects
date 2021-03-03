@@ -221,8 +221,8 @@ input[type=button]:active{ /*-*/
 	align-items:center;
 	align-content: center;
 }
-.fieldest__d-2-res{
-	width: 25%;
+#fieldest__d-2-resMaxLength{
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;

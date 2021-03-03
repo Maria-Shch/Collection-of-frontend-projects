@@ -4,13 +4,12 @@ let divML = document.getElementById('fieldest__d-2-resMaxLength');
 buttonAddString.addEventListener("click", buttonAddStringClick);
 buttonDeleteString.addEventListener("click", buttonDeleteStringClick);
 
-
 let arr=[];
 
 function buttonAddStringClick() {
     arr.push(document.getElementById("inputStringArray").value);
     
-    arrayOutput();
+    stringOutput();
 
 
     //Очищаю поле ввода
@@ -22,12 +21,10 @@ function buttonDeleteStringClick() {
     divML.removeChild(divML.lastChild);
 }
 
-function arrayOutput() {
+function stringOutput() {
     let pML = document.createElement('p');
     pML.setAttribute("class", "res");
 
-    for(let i=0; i<arr.length; i++){
-        pML.textContent = arr[i];
-        divML.appendChild(pML); 
-    }
+    pML.textContent = arr[arr.length-1];
+    divML.appendChild(pML); 
 }
