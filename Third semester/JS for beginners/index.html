@@ -680,6 +680,24 @@
 				</dialog>
 			</fieldset>
 			
+			<fieldset class = "container-main__fieldest"><!-- Самая длинная строка из массива -->
+				<legend class = "legend-title">Самая длинная строка</legend>
+				<div class = "fieldest__d-3">
+					<div class="fieldest__d-1_Strings">
+						<input id = "inputStringArray" placeholder = "Введите строку.." type = "text">
+						<input type = "button" id = "buttonAddString" value = "Добавить строку">
+						<input type = "button" id = "buttonDeleteString" value = "Удалить строку">
+						<input type = "button" id = "buttonMaxLength" value = "Результат">
+					</div>
+					<div class="fieldest__d-2-resMaxLength" id="fieldest__d-2-strings">
+						<!--Сюда добавляются строки -->
+					</div>
+					<div class="fieldest__d-2-resMaxLength" id="fieldest__d-2-resMaxLength">
+						<!--Сюда добавляется результат -->
+					</div>
+				</div>
+			</fieldset>
+
 			<fieldset class = "container-main__fieldest"><!--Кнопка с экраном приветствия-->
 				<legend class = "legend-title"><a name="Кнопка"></a>Чудо-кнопка</legend>
 				<div id="super-div" onclick="visibilityFunction()">
@@ -749,24 +767,6 @@
 					<p class="text-code">}</p>	
 					<input type = "button" id = "buttonInvisibleClose" value = "Понятно"></input>
 				</dialog>
-			</fieldset>
-
-			<fieldset class = "container-main__fieldest"><!-- Самая длинная строка из массива -->
-				<legend class = "legend-title">Самая длинная строка</legend>
-				<div class = "fieldest__d-3">
-					<div class="fieldest__d-1_Strings">
-						<input id = "inputStringArray" placeholder = "Введите строку.." type = "text">
-						<input type = "button" id = "buttonAddString" value = "Добавить строку">
-						<input type = "button" id = "buttonDeleteString" value = "Удалить строку">
-						<input type = "button" id = "buttonMaxLength" value = "Результат">
-					</div>
-					<div class="fieldest__d-2-resMaxLength" id="fieldest__d-2-strings">
-						<!--Сюда добавляются строки -->
-					</div>
-					<div class="fieldest__d-2-resMaxLength" id="fieldest__d-2-resMaxLength">
-						<!--Сюда добавляется результат -->
-					</div>
-				</div>
 			</fieldset>
 		</div>
 	</main>

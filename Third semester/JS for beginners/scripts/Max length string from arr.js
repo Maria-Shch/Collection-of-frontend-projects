@@ -1,4 +1,4 @@
-//Функция принимает массив строк, выводит самую длинную
+//Функция принимает массив строк, выводит самую длинную/ длинные
 
 let divMLRes = document.getElementById('fieldest__d-2-resMaxLength');
 let divML = document.getElementById('fieldest__d-2-strings');
@@ -10,9 +10,9 @@ buttonMaxLength.addEventListener("click", buttonMaxLengthClick);
 let arr=[];
 
 function buttonAddStringClick() {
-    if(document.getElementById("inputStringArray").value.trim() != ""){
+    if(document.getElementById("inputStringArray").value.trim() != "")
+    {
         arr.push(document.getElementById("inputStringArray").value.trim());
-    
         stringOutput();
     }
     
@@ -32,7 +32,7 @@ function stringOutput() {
     pML.textContent = arr[arr.length-1];
     divML.appendChild(pML); 
 
-    //Перед добавлением, следующим после вывода результата, очищаю блок, хранящий результат
+    //Перед добавлением строки, следующим после вывода результата, очищаю блок, хранящий результат
     while (divMLRes.firstChild) {
         divMLRes.removeChild(divMLRes.firstChild);
     }
@@ -53,10 +53,8 @@ function buttonMaxLengthClick() {
     let maxLength = arr.map(x => x.length).reduce((x, y) => x > y ? x : y, 0); 
 
     //Массив со строками максимальной длины
-    let arrRes = [];
-
     //Добавляю в массив все строки с максимальной длиной
-    arrRes = arr.filter(x => x.length == maxLength); 
+    let arrRes = arr.filter(x => x.length == maxLength); 
 
     arrRes.forEach(item => {
         let pMLRes = document.createElement('p');
@@ -65,6 +63,6 @@ function buttonMaxLengthClick() {
         divMLRes.appendChild(pMLRes); 
     });
     
-    //Очищаю массив значений
+    //Очищаю массив значений после вывода результата
     arr = [];
 }
