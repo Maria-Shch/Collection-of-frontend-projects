@@ -72,6 +72,6 @@ function searchChars(string) {
     for (let char of string) { //если значение совпадает с максимальной частотой, то добавляю ключ (символ) в Set
         if (charMap.get(char) == max) setMax.add(char);
     }
-     
+    
     return setMax;
 }

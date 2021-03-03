@@ -212,6 +212,18 @@ input[type=button]:active{ /*-*/
 	align-content: center;
 
 }
+.fieldest__d-1_Strings-2{
+	width: 50%;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items:center;
+	align-content: center;
+}
 .fieldest__d-2{
 	width: 36%;
 	display: flex;
@@ -272,7 +284,7 @@ input[type=button]:active{ /*-*/
 .res{
 	margin: 0 auto;
     color: #f17cfff2;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
 }
 .res-error{

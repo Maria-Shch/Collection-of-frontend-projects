@@ -681,7 +681,7 @@
 			</fieldset>
 			
 			<fieldset class = "container-main__fieldest"><!-- Самая длинная строка из массива -->
-				<legend class = "legend-title">Самая длинная строка</legend>
+				<legend class = "legend-title"><a name="Задачи2"></a>Самая длинная строка</legend>
 				<div class = "fieldest__d-3">
 					<div class="fieldest__d-1_Strings">
 						<input id = "inputStringArray" placeholder = "Введите строку.." type = "text">
@@ -698,10 +698,10 @@
 				</div>
 			</fieldset>
 
-			<fieldset class = "container-main__fieldest"><!-- Самая длинная строка из массива -->
+			<fieldset class = "container-main__fieldest"><!-- Самый часто встречающийся символ в строке -->
 				<legend class = "legend-title">Самый частовстречающийся символ</legend>
 				<div class = "fieldest__d-3">
-					<div class="fieldest__d-1_Strings">
+					<div class="fieldest__d-1_Strings-2">
 						<input id = "inputString" placeholder = "Введите строку.." type = "text">
 						<input type = "button" id = "buttonRepeatRes" value = "Результат">
 					</div>
@@ -710,6 +710,20 @@
 					</div>
 					<div class="fieldest__d-2-resMaxLength" id="fieldest__d-2-resStringRep">
 						<!--Сюда добавляется результат -->
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset class = "container-main__fieldest"><!-- Заменить символ в строке -->
+				<legend class = "legend-title">Замена символа</legend>
+				<div class = "fieldest__d-3">
+					<div class="fieldest__d-1_Strings-2">
+						<input id = "inputStringSecond" placeholder = "Введите строку.." type = "text">
+						<input id = "inputChar" placeholder = "Введите символ.." type = "text">
+						<input type = "button" id = "buttonReplaceRes" value = "Результат">
+					</div>
+					<div class="fieldest__d-2-resMaxLength" id="fieldest__d-2-stringReplace">
+						<!--Сюда добавляется всё -->
 					</div>
 				</div>
 			</fieldset>
@@ -813,5 +827,6 @@
 	<script src = "scripts/welcome_screen.js"></script>
 	<script src = "scripts/Max length string from arr.js"></script>
 	<script src = "scripts/most common symbol.js"></script>
+	<script src = "scripts/symbol replacement.js"></script>
 </body> 
 </html>
