@@ -14,7 +14,9 @@
 				<div id = "div-as-hr"></div>
 				<a href = "#Тест">Пройти тест</a>
 				<div id = "div-as-hr"></div>
-				<a href = "#Кнопка">Чудо-кнопка</a>  
+			<!--<a href = "#Кнопка">Чудо-кнопка</a>  
+				<div id = "div-as-hr"></div>-->
+				<a href = "#Задачи2">Новые задачи</a>  
 			</div>
             <div id = "user-name">
                 <!--Сюда добавляется имя из LocalStorage-->
@@ -748,6 +750,21 @@
 					<input type = "button" id = "buttonInvisibleClose" value = "Понятно"></input>
 				</dialog>
 			</fieldset>
+
+			<fieldset class = "container-main__fieldest"><!-- Самая длинная строка из массива -->
+				<legend class = "legend-title">Самая длинная строка</legend>
+				<div class = "fieldest__d-3">
+					<div class="fieldest__d-1_Strings">
+						<input id = "inputStringArray" placeholder = "Введите строку.." type = "text">
+						<input type = "button" id = "buttonAddString" value = "Добавить строку">
+						<input type = "button" id = "buttonDeleteString" value = "Удалить строку">
+						<input type = "button" id = "buttonMaxLength" value = "Результат">
+					</div>
+					<div class="fieldest__d-2-res" id="fieldest__d-2-resMaxLength">
+						<!--Сюда добавляется результат -->
+					</div>
+				</div>
+			</fieldset>
 		</div>
 	</main>
 	<footer>
@@ -775,5 +792,6 @@
 	<script src = "scripts/stopwatch.js"></script>
 	<script src = "scripts/test.js"></script>
 	<script src = "scripts/welcome_screen.js"></script>
+	<script src = "scripts/Max length string from arr.js"></script>
 </body> 
 </html>

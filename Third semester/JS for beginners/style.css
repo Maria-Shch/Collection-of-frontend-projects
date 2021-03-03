@@ -199,6 +199,19 @@ input[type=button]:active{ /*-*/
 	align-items:center;
 	align-content: center;
 }
+.fieldest__d-1_Strings{
+	width: 75%;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items:center;
+	align-content: center;
+
+}
 .fieldest__d-2{
 	width: 36%;
 	display: flex;
