@@ -29,14 +29,14 @@ body{
   
 .menu__item{ 
     padding: 10px;
-	width: 50%;
+	width: 600px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
 }
-#div-as-hr{ 
+.div-as-hr{ 
 	height: 30px;
     width: 1px;
 	background-color: #faebd7e0;
@@ -89,4 +89,7 @@ main{
 	color:#490e39e0;
 	font: 28px Graphik,sans-serif;
 	text-decoration: none;
+}
+.img-logo{
+	width: 80px;
 }
