@@ -1,0 +1,130 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset = "utf-8"> 
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<title>Главная</title> 
+<link rel = "stylesheet" href = "style.css">
+</head> 
+<body> 
+	<header>
+		<nav class = "menu">
+			<div class = "menu__item">     
+				<a href = "index.html">Все фильмы</a>
+				<div id = "div-as-hr"></div>
+				<a href = "addFilm.html">Добавить фильм</a>
+				<div id = "div-as-hr"></div>
+				<a href = "myFilms.html">Моя коллекция</a>  
+			</div>
+		</nav> 
+	</header>
+	<main>
+        <div class = "container-main">
+            <form>
+                <label class="label-text">
+                    Название фильма 
+                    <input id = "inputTitleMovie" type = "text" placeholder="..." required="required">
+                </label>
+
+                <label class="label-text">
+                    Страна 
+                    <input id = "inputCountry" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="required"  title="Поле не должно содержать цифр">
+                </label>
+
+                <label class="label-text">
+                    Жанр 
+                    <input id = "inputGenre" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="required" title="Поле не должно содержать цифр">
+                </label>
+
+                <label class="label-text">
+                    Режиссер (можно несколько) 
+                    <input id = "inputDirector1" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="required" title="Поле не должно содержать цифр"> 
+                    <input id = "inputDirector2" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" title="Поле не должно содержать цифр">
+                    <input id = "inputDirector3" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" title="Поле не должно содержать цифр"> 
+                </label>
+
+                <label class="label-text">
+                    Сценарий 
+                    <textarea id = "inputFilmScript" name="text" required="required"></textarea>
+                </label>
+
+                <label class="label-text">
+                    Продюсер
+                    <input id = "inputProducer" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="required" title="Поле не должно содержать цифр">
+                </label>
+
+                <label class="label-text">
+                    Оператор
+                    <input id = "inputOperator" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="required" title="Поле не должно содержать цифр">
+                </label>
+
+                <label class="label-text">
+                    Композитор
+                    <input id = "inputComposer" type = "text" placeholder="..."  pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="required" title="Поле не должно содержать цифр">
+                </label>
+
+                <label class="label-text">
+                    Бюджет (млн. $)
+                    <input id = "inputBudget" type = "text" placeholder="..." pattern="^[ 0-9]+$" required="required" title="Поле должно содержат только числа">
+                </label>
+
+                <label class="label-text">
+                    Мировые сборы (млн. $)
+                    <input id = "inputFilmBoxOffice" type = "text" placeholder="..." pattern="^[ 0-9]+$" required="required" title="Поле должно содержат только числа">
+                </label>
+
+                <label class="label-text" for="age">Возрастной ценз
+                    <input list="age" type = "text" id = "inputAge" required="required">
+                    <datalist id="age">
+                        <option value="0+"></option>
+                        <option value="6+"></option>
+                        <option value="12+"></option>
+                        <option value="16+"></option>
+                        <option value="18+"></option>
+                    </datalist>
+                </label>
+
+                <label class="label-text">
+                    Длительность
+                    <input id = "inputHours"  placeholder="2" type="number" min="0"  step="1" required="required">	
+                    <input id = "inputMinutes"  placeholder="30" type="number" min="0" max="59"  step="1" required="required">	
+                    <input id = "inputSeconds" placeholder="50" type="number" min="1" max="59"  step="1" required="required">
+                </label>
+
+                <label class="label-text" for="photo">
+                    Постер (файл может быть только формата jpeg)
+				    <input type="file" name="photo" multiple accept="image/jpeg" required="required">	
+                </label>
+
+                <label class="label-text" for="photo">
+                    Дата выхода
+				    <input id = "inputDay"  placeholder="1" type="number" min="1" max="31"  step="1" required="required">	
+                    <input id = "inputMonth"  placeholder="1" type="number" min="1" max="12"  step="1" required="required">	
+                    <input id = "inputYear" placeholder="1970" type="number" min="1900" max="2100"  step="1" required="required">	
+                </label>
+
+                <button type="submit">Отправить</button>
+			    <button type="reset">Очистить</button>
+            </form>
+        </div>
+	</main>
+	<footer>
+		<div class="div-footer">
+			<p>По любым вопросам вы можете обращаться к разработчику: </p>
+			<a href="https://www.instagram.com/mariaa.shch/"><img class="img-network"  src="https://image.flaticon.com/icons/svg/1384/1384031.svg" alt="logo instagram"></a>
+			<a href="https://t.me/mariaa_shch"><img class="img-network"  src="https://image.flaticon.com/icons/svg/1946/1946547.svg" alt="logo telegram"></a>
+			<a href="https://vk.com/mariaskio"><img class="img-network"  src="https://image.flaticon.com/icons/svg/2111/2111828.svg" alt="logo vk"></a>
+			<a href="https://github.com/Maria-Shch"><img class="img-network"  src="https://image.flaticon.com/icons/svg/2111/2111425.svg" alt="logo github"></a>
+			
+		</div>
+		<div class="div-footer">
+			<p>mariaskio@mail.ru</p>
+			<img class="img-network"  src="https://image.flaticon.com/icons/svg/2165/2165061.svg" alt="logo mail">
+		</div>
+		<div class="div-footer">
+			<p>Copyright 2021. All rights reserved. </p>
+		</div>
+	</footer>
+	<script src = "scripts/.js"></script>
+</body> 
+</html>
