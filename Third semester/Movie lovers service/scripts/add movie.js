@@ -31,13 +31,85 @@ function FilmConstructor() {
     this.minutes = document.getElementById("iMinutes").value.trim(), 
     this.seconds = document.getElementById("iSeconds").value.trim(), 
     this.photo = document.getElementById("iPhoto").value.trim(),
-    this.day = document.getElementById("iDay").value.trim(),
-    this.month = document.getElementById("iMonth").value.trim(),
-    this.year = document.getElementById("iYear").value.trim()
+    this.date = new Date(document.getElementById("iYear").value.trim(), document.getElementById("iMonth").value.trim()-1, document.getElementById("iDay").value.trim())
 };
 
-function sumbitFormFilm(){
-    event.preventDefault();
-    let film1 = new FilmConstructor();
-    console.log(film1);
+formFilm.addEventListener("submit", sumbitForm);
+
+function sumbitForm(){
+    clearDivMessageError();
+    if(checkEmptyInput() == false){
+        let film = new FilmConstructor();
+        addMessageSuccess("Фильм успешно добавлен в коллекцию!");
+    }
+    event.preventDefault(); 
 };
+
+function checkEmptyInput(){
+    let res = false;
+
+    if(document.getElementById("iTitleMovie").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Название");
+        res = true;
+    }
+
+    if(document.getElementById("iCountry").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Страна");
+        res = true;
+    }
+
+    if(document.getElementById("iGenre").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Жанр");
+        res = true;
+    }
+
+    if(document.getElementById("iDirector1").value.trim() == ""){
+        addMessageError("Вы не заполнили первое поле Режиссер");
+        res = true;
+    }
+
+    if(document.getElementById("iFilmScript").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Сценарий");
+        res = true;
+    }
+
+    if(document.getElementById("iProducer").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Продюсер");
+        res = true;
+    }
+
+    if(document.getElementById("iOperator").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Оператор");
+        res = true;
+    }
+
+    if(document.getElementById("iComposer").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Композитор");
+        res = true;
+    }
+    return res;
+}
+
+function addMessageError(strMessage){
+    let p = document.createElement('p');
+    p.setAttribute("class", "p-mes-error");
+    p.textContent = strMessage;
+    let div = document.getElementById('message');
+    div.appendChild(p); 
+}
+
+function addMessageSuccess(strMessage){
+    let p = document.createElement('p');
+    p.setAttribute("class", "p-mes-success");
+    p.textContent = strMessage;
+    let div = document.getElementById('message');
+    div.appendChild(p); 
+}
+
+function clearDivMessageError(){
+    let div = document.getElementById('message');
+
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+}

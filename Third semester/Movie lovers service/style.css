@@ -77,9 +77,9 @@ input[type=text]:focus {
     width: 200px;
 }
 
-#iDay, #iMonth, #iYear, #iMinutes, #iHours, #iSeconds{ 
+#iDay, #iMonth, #iYear, #iMinutes, #iHours, #iSeconds, #iBudget, #iFilmBoxOffice, #iAge{ 
     margin-left: 15px;
-    color: #FFFFFF;
+    color: #f8f8f8e0;
     font-size: 18px;
     font-weight: bold;
     background-color: #1c2c30c9;
@@ -162,6 +162,17 @@ button:active{
 	border-color: #9f59bc;
 }
 
+.p-mes-error{
+	color:#df3131;
+	font: 24px Graphik,sans-serif;
+    font-weight: bold;
+}
+
+.p-mes-success{
+	color:#31df4e;
+	font: 24px Graphik,sans-serif;
+    font-weight: bold;
+}
 
 
 
