@@ -77,7 +77,7 @@ input[type=text]:focus {
     width: 200px;
 }
 
-#inputDay, #inputMonth, #inputYear, #inputMinutes, #inputHours, #inputSeconds{ 
+#iDay, #iMonth, #iYear, #iMinutes, #iHours, #iSeconds{ 
     margin-left: 15px;
     color: #FFFFFF;
     font-size: 18px;
