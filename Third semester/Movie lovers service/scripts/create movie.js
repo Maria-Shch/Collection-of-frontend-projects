@@ -13,7 +13,12 @@
 // 13. Постер photo
 // 14. Дата выхода Day, Month, Year
 
-function FilmConstructor() {
+
+let id = 0;
+let generalCollection = [];
+
+function FilmConstructor(id) {iFilmBoxOffice
+    this.id = id;
     this.titleMovie = document.getElementById("iTitleMovie").value.trim(),
     this.country = document.getElementById("iCountry").value.trim(),
     this.genre = document.getElementById("iGenre").value.trim(),
@@ -25,7 +30,9 @@ function FilmConstructor() {
     this.operator = document.getElementById("iOperator").value.trim(), 
     this.composer = document.getElementById("iComposer").value.trim(), 
     this.budget = document.getElementById("iBudget").value.trim(), 
-    this.filmBoxOffice= document.getElementById("iFilmBoxOffice").value.trim(),
+    this.budgetCurrency = document.getElementById("iBudgetCurrency").value.trim(), 
+    this.filmBoxOffice = document.getElementById("iFilmBoxOffice").value.trim(),
+    this.filmBoxOfficeCurrency = document.getElementById("iFilmBoxOfficeCurrency").value.trim(),
     this.age = document.getElementById("iAge").value,
     this.hours = document.getElementById("iHours").value.trim(),
     this.minutes = document.getElementById("iMinutes").value.trim(), 
@@ -39,11 +46,22 @@ formFilm.addEventListener("submit", sumbitForm);
 function sumbitForm(){
     clearDivMessageError();
     if(checkEmptyInput() == false){
-        let film = new FilmConstructor();
+        createFilm();
         addMessageSuccess("Фильм успешно добавлен в коллекцию!");
     }
     event.preventDefault(); 
-};
+}
+
+function createFilm(){
+    let film = new FilmConstructor(id+=1);
+    generalCollection.push(film);
+    addFilmOnPage(film);
+
+    // localStorage.setItem('generalCollection', JSON.stringify(generalCollection));
+    // console.log(localStorage.getItem('generalCollection'));
+}
+
+
 
 function checkEmptyInput(){
     let res = false;
@@ -52,37 +70,30 @@ function checkEmptyInput(){
         addMessageError("Вы не заполнили поле Название");
         res = true;
     }
-
     if(document.getElementById("iCountry").value.trim() == ""){
         addMessageError("Вы не заполнили поле Страна");
         res = true;
     }
-
     if(document.getElementById("iGenre").value.trim() == ""){
         addMessageError("Вы не заполнили поле Жанр");
         res = true;
     }
-
     if(document.getElementById("iDirector1").value.trim() == ""){
         addMessageError("Вы не заполнили первое поле Режиссер");
         res = true;
     }
-
     if(document.getElementById("iFilmScript").value.trim() == ""){
         addMessageError("Вы не заполнили поле Сценарий");
         res = true;
     }
-
     if(document.getElementById("iProducer").value.trim() == ""){
         addMessageError("Вы не заполнили поле Продюсер");
         res = true;
     }
-
     if(document.getElementById("iOperator").value.trim() == ""){
         addMessageError("Вы не заполнили поле Оператор");
         res = true;
     }
-
     if(document.getElementById("iComposer").value.trim() == ""){
         addMessageError("Вы не заполнили поле Композитор");
         res = true;

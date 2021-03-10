@@ -3,7 +3,7 @@
 <head> 
 <meta charset = "utf-8"> 
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-<title>Главная</title> 
+<title>Сервис фильмов</title> 
 <link rel = "stylesheet" href = "style.css">
 </head> 
 <body> 
@@ -12,15 +12,194 @@
 			<div class = "menu__item">     
 				<a href = "index.html">Все фильмы</a>
 				<div id = "div-as-hr"></div>
-				<a href = "addFilm.html">Добавить фильм</a>
+				<a href = "#Добавить">Добавить фильм</a>
 				<div id = "div-as-hr"></div>
 				<a href = "myFilms.html">Моя коллекция</a>  
 			</div>
 		</nav> 
 	</header>
 	<main>
+		<div class = "container-main" id = "container-main">
+			<p class="p-inform">В этой коллекции находятся все фильмы, которые добавляли различные пользователи. Любой из этих фильмов вы можете добавить в свою личную коллекцию, тогда он станет доступен для просмотра.</p>
+
+			<div class="card-movie">
+				<p class="movie-title">Викинг</p>
+
+				<div class="card-movie__row">
+					<div class="movie-inform">
+						<div class="movie-inform__row">
+							<pre class="movie-param">Название: </pre>
+							<p class="movie-description"> "Викинг"</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Страна: </pre>
+							<p class="movie-description"> Россия</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Жанр: </pre>
+							<p class="movie-description"> История, драма</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Режиссер: </pre>
+							<p class="movie-description"> Андрей Кравчук</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Сценарий: </pre>
+							<p class="movie-description"> Раннее Средневековье. Время тяжелых мечей и темных законов крови. Правящий род в раздоре. Вина за случайную смерть брата легла на Великого князя. По закону мстить ему должен младший брат — бастард. За отказ убивать он заплатит всем, что у него было, потому что «для мира нужно больше мечей, чем для войны».</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Продюсер: </pre>
+							<p class="movie-description"> Константин Эрнст</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Оператор: </pre>
+							<p class="movie-description"> Игорь Гринякин</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Композитор: </pre>
+							<p class="movie-description"> Игорь Матвиенко</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Бюджет: </pre>
+							<p class="movie-description"> 1 224 661 889 рублей</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Сборы мировые: </pre>
+							<p class="movie-description"> 29 161 298 долларов</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Рейтинг возраста: </pre>
+							<p class="movie-description"> 18+</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Длительность: </pre>
+							<p class="movie-description"> 2 ч. 13 мин.</p>
+						</div>
+
+						<div class="movie-inform__row">
+							<pre class="movie-param">Дата выхода: </pre>
+							<p class="movie-description"> 29.02.2016</p>
+						</div>
+					</div>
+					<div class="movie-img">
+						<img class="img"  src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/3998364c-e6a9-48c9-a500-cd58f22accf3/300x450" alt="movie img">
+					</div>
+				</div>
+
+				<input type="button" id="addFilmInPersonalCollection" value="Добавить в свою коллекцию">
+			</div>
+		</div>
+		<div class = "container-main"><a name = "Добавить"></a>
+			<form id="formFilm"> 
+                <label class = "label-text">
+                Название фильма                                               
+                    <input id = "iTitleMovie" type = "text" placeholder = "..." >
+                </label>
+
+                <label class = "label-text">
+                    Страна 
+                    <input id = "iCountry" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"   title = "Поле не должно содержать цифр">
+                </label>
+
+                <label class = "label-text">
+                    Жанр 
+                    <input id = "iGenre" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"   title = "Поле не должно содержать цифр">
+                </label>
+
+                <label class = "label-text">
+                    Режиссер (можно несколько) 
+                    <input id = "iDirector1" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр"> 
+                    <input id = "iDirector2" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
+                    <input id = "iDirector3" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр"> 
+                </label>
+
+                <label class = "label-text">
+                    Сценарий 
+                    <textarea id = "iFilmScript" name="text"  title = "Поле не должно начинаться с пробела или полностью состоять из пробелов"></textarea>
+                </label>
+
+                <label class = "label-text">
+                    Продюсер
+                    <input id = "iProducer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
+                </label>
+
+                <label class = "label-text">
+                    Оператор
+                    <input id = "iOperator" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
+                </label>
+
+                <label class = "label-text">
+                    Композитор
+                    <input id = "iComposer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
+                </label>
+
+                <label class = "label-text">
+                    Бюджет
+                    <input id = "iBudget"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа">
+                    <select id = "iBudgetCurrency">
+                        <option value = "долларов">долларов</option>
+                        <option value = "евро">евро</option>
+                        <option value = "рублей">рублей</option>
+                    </select>
+                </label>
+
+                <label class = "label-text">
+                    Мировые сборы
+                    <input id = "iFilmBoxOffice"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа">
+                    <select id = "iFilmBoxOfficeCurrency">
+                        <option value = "долларов">долларов</option>
+                        <option value = "евро">евро</option>
+                        <option value = "рублей">рублей</option>
+                    </select>
+                </label>
+
+                <label class = "label-text" >Возрастной ценз
+                    <select id="iAge">
+                        <option value = "0+">0+</option>
+                        <option value = "6+">6+</option>
+                        <option value = "12+">12+</option>
+                        <option value = "16+">16+</option>
+                        <option value = "18+">18+</option>
+                    </select>
+                </label>
+
+                <label class = "label-text">
+                    Длительность
+                    <input id = "iHours"  placeholder="2" type = "number" min = "0"  step = "1">	
+                    <input id = "iMinutes"  placeholder="30" type = "number" min = "0" max = "59"  step = "1">	
+                    <input id = "iSeconds" placeholder="50" type = "number" min = "0" max = "59"  step = "1">
+                </label>
+
+                <label class = "label-text" for="photo">
+                    Постер (файл может быть только формата jpeg)
+				    <input type = "file" id="iPhoto" name="photo" multiple accept="image/jpeg">	
+                </label>
+
+                <label class = "label-text">
+                    Дата выхода
+				    <input id = "iDay"  placeholder="1" type = "number" min = "1" max = "31"  step = "1" title = "Поле должно содержать числа от 1 до 31">	
+                    <input id = "iMonth"  placeholder="1" type = "number" min = "1" max = "12"  step = "1" title = "Поле должно содержать числа от 1 до 12">	
+                    <input id = "iYear" placeholder="1970" type = "number" min = "1800" max = "2100"  step = "1" title = "Поле должно содержать числа от 1800 до 2100">	
+                </label>
+
+                <button type = "submit">Добавить</button>
+			    <button type = "reset">Очистить</button>
+                <div id = "message"> </div>
+            </form>
+		</div>
 	</main>
-	<footer>
+	<footer> 
 		<div class="div-footer">
 			<p>По любым вопросам вы можете обращаться к разработчику: </p>
 			<a href="https://www.instagram.com/mariaa.shch/"><img class="img-network"  src="https://image.flaticon.com/icons/svg/1384/1384031.svg" alt="logo instagram"></a>
@@ -37,6 +216,11 @@
 			<p>Copyright 2021. All rights reserved. </p>
 		</div>
 	</footer>
-	<script src = "scripts/.js"></script>
+	<script src = "scripts/create movie.js"></script>
+	<script src = "scripts/add film on page.js"></script>
 </body> 
 </html>
+
+<!-- Добавить ввод ссылки постера через input
+Вернуть requerd 
+Доделать время-->
