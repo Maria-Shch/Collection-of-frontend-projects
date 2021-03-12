@@ -22,16 +22,17 @@ function buttonReplaceResClick() {
         divReplace.appendChild(pReplace);
 
         let setReplace = searchChars(inputStringSecond); 
-        c = setReplace.values().next().value; //Получаю первое значение из Seta с асмыми частовстречающимися символами
+        c = setReplace.values().next().value; //Получаю первое значение из Seta с самыми частовстречающимися символами
         
         let pReplace2 = document.createElement('p');
         pReplace2.setAttribute("class", "res");
         pReplace2.textContent = "Ваш символ: " + charUser;
         divReplace.appendChild(pReplace2);
 
-        String.prototype.replaceAll = function(search, replacement) {
+        //Метод replaceAll() возвращает новую строку со всеми совпадениями pattern, который меняется на replacement.
+        String.prototype.replaceAll = function(pattern, replacement) {
             let target = this;
-            return target.split(search).join(replacement);
+            return target.split(pattern).join(replacement);
         };
 
         let pReplace3 = document.createElement('p');
