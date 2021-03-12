@@ -72,12 +72,45 @@ input[type=text]{
     position: relative;
     transition: .3s linear;
 }
-
+#iPhoto{ 
+    margin-left: 15px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #1c2c30c9;
+    width: 180px;
+    height: 30px;
+    padding-left: 15px;
+    border-radius: 11px;
+    border: 1px solid #1c89a185;
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+}
+#iPhoto:focus { 
+    width: 420px;
+} 
 input[type=text]:focus { 
     width: 200px;
 }
-
-#iDay, #iMonth, #iYear, #iMinutes, #iHours, #iSeconds, #iBudget, #iFilmBoxOffice, #iAge, #iFilmBoxOfficeCurrency, #iBudgetCurrency{ 
+#iDay, #iMonth, #iYear, #iMinutes, #iHours, #iSeconds{
+    margin-left: 15px;
+    color: #f8f8f8e0;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #1c2c30c9;
+    width: 80px;
+    height: 30px;
+    padding-left: 0px;
+    border-radius: 11px;
+    border: 1px solid #1c89a185;
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+    text-align: center;
+    padding-left: 2px;
+}
+#iBudget, #iFilmBoxOffice, #iAge, #iFilmBoxOfficeCurrency, #iBudgetCurrency{ 
     margin-left: 15px;
     color: #f8f8f8e0;
     font-size: 18px;
