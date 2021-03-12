@@ -19,6 +19,17 @@ function buttonAnagramClick() {
         //Передаю в ф-ю isAnagram любую из двух проверяемых строк, а также карту каждой строки
         let res = isAnagram(inputAnagram1, getMapOfChars(inputAnagram1), getMapOfChars(inputAnagram2));
 
+
+        let pString1 = document.createElement('p');
+        pString1.setAttribute("class", "res");
+        pString1.textContent = "Первая строка: " + inputAnagram1;
+        divAnagram.appendChild(pString1);
+
+        let pString2 = document.createElement('p');
+        pString2.setAttribute("class", "res");
+        pString2.textContent = "Вторая строка: " + inputAnagram2;
+        divAnagram.appendChild(pString2);
+        
         let pAnagram = document.createElement('p');
         pAnagram.setAttribute("class", "res");
         pAnagram.textContent = res;

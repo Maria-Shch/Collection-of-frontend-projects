@@ -22,7 +22,7 @@ function buttonReplaceResClick() {
         divReplace.appendChild(pReplace);
 
         let setReplace = searchChars(inputStringSecond); 
-        c = setReplace.values().next().value; //Получаю первое значение из Seta с самыми частовстречающимися символами
+        let c = setReplace.values().next().value; //Получаю первое значение из Seta с самыми частовстречающимися символами
         
         let pReplace2 = document.createElement('p');
         pReplace2.setAttribute("class", "res");
@@ -37,8 +37,13 @@ function buttonReplaceResClick() {
 
         let pReplace3 = document.createElement('p');
         pReplace3.setAttribute("class", "res");
-        pReplace3.textContent = "Результат: " + inputStringSecond.replaceAll(c, charUser);
+        pReplace3.textContent = "Символ, которые заменён: " + c;
         divReplace.appendChild(pReplace3);
+
+        let pReplace4 = document.createElement('p');
+        pReplace4.setAttribute("class", "res");
+        pReplace4.textContent = "Результат: " + inputStringSecond.replaceAll(c, charUser);
+        divReplace.appendChild(pReplace4);
     }
     else
     {
