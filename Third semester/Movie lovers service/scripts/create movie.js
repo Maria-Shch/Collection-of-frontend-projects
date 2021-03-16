@@ -17,7 +17,7 @@
 let id = 0;
 let generalCollection = [];
 
-function FilmConstructor(id) {iFilmBoxOffice
+function FilmConstructor(id) {
     this.id = id;
     this.titleMovie = document.getElementById("iTitleMovie").value.trim(),
     this.country = document.getElementById("iCountry").value.trim(),
