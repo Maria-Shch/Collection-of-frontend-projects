@@ -1,6 +1,26 @@
-function addFilmOnPage(film){
-    // users = JSON.parse(localStorage.getItem('storedUsers'));
+//Отрисовка всех фильмов на страницу из LS
+addFilmsOnPage();
 
+function addFilmsOnPage(){
+    //Удаляю всю прежнюю отрисовку карточек фильмов
+    document.querySelectorAll(".card-movie").forEach(e => e.remove());
+
+    //Получаю коллекцию фильмов из LS
+    let allFilmsInLS =  JSON.parse(localStorage.getItem('generalCollection'));
+    
+    //Если в LS были фильмы, отрисовываю их карточки
+    if(allFilmsInLS!=null){
+        for(let i=0; i<allFilmsInLS.length; i++){
+            addFilmOnPage(allFilmsInLS[i]);
+        }
+    }
+    
+}
+
+
+//Функция создаёт карточку фильма и добавляет её на страницу
+function addFilmOnPage(film){
+    
     let containerMain = document.getElementById("container-main");
 
     let cardMovie = document.createElement('div');
@@ -234,10 +254,6 @@ function addFilmOnPage(film){
     let minutes;
     let seconds;
 
-    console.log(film.hours);
-    console.log(film.minutes);
-    console.log(film.seconds);
-
     if(film.hours == undefined)  hours = "00";
     if(film.hours < 10) hours = "0" + film.hours; 
     else hours = film.hours;
@@ -267,16 +283,18 @@ function addFilmOnPage(film){
     let movieDescriptionDate = document.createElement('p');
     movieDescriptionDate.setAttribute("class", "movie-description");
 
+    //Приходится заново создавать объект Date, т.к. после LS он перестаёт быть объектом Date, становится простой строкой
+    let date = new Date(film.date);
     let day;
     let month;
 
-    if(film.date.getDate() < 10) day = "0" + film.date.getDate();
-    else day = film.date.getDate();
+    if(date.getDate() < 10) day = "0" + date.getDate();
+    else day = date.getDate();
 
-    if(film.date.getMonth()+1 < 10)  month = "0" + (film.date.getMonth()+1);
-    else month = film.date.getMonth() + 1;
+    if(date.getMonth()+1 < 10)  month = "0" + (date.getMonth()+1);
+    else month = date.getMonth() + 1;
 
-    movieDescriptionDate.textContent = day + "." + month + "." + film.date.getFullYear();
+    movieDescriptionDate.textContent = day + "." + month + "." + date.getFullYear();
 
     movieInformRowDate.appendChild(movieParamDate);
     movieInformRowDate.appendChild(movieDescriptionDate);

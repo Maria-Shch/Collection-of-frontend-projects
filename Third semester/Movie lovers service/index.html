@@ -12,7 +12,7 @@
 			<div class = "menu__item">     
 				<a href = "index.html">Все фильмы</a>
 				<div id = "div-as-hr"></div>
-				<a href = "#Добавить">Добавить фильм</a>
+				<a href = "addFilm.html">Добавить фильм</a>
 				<div id = "div-as-hr"></div>
 				<a href = "myFilms.html">Моя коллекция</a>  
 			</div>
@@ -100,190 +100,6 @@
 				<input type="button" id="addFilmInPersonalCollection" value="Добавить в свою коллекцию">
 			</div>
 		</div>
-		<div class = "container-main"><a name = "Добавить"></a>
-			<form id="formFilm"> 
-                <label class = "label-text">
-                Название фильма                                               
-                    <input id = "iTitleMovie" type = "text" placeholder = "..." >
-                </label>
-
-				<label class = "label-text" >
-					Страна
-                    <select id="iCountry">
-						<option value = "Аргентина">Аргентина</option>
-						<option value = "Армения">Армения</option>
-						<option value = "Белоруссия">Белоруссия</option>
-						<option value = "Бельгия">Бельгия</option>
-						<option value = "Болгария">Болгария</option>
-						<option value = "Ботсвана">Ботсвана</option>
-						<option value = "Бразилия">Бразилия</option>
-						<option value = "Великобритания">Великобритания</option>
-						<option value = "Венгрия">Венгрия</option>
-						<option value = "Венесуэла">Венесуэла</option>
-						<option value = "Германия">	Германия</option>
-						<option value = "Греция">Греция</option>
-						<option value = "Грузия">Грузия</option>
-						<option value = "Дания">Дания</option>
-						<option value = "Египет">Египет</option>
-						<option value = "Израиль">	Израиль</option>
-						<option value = "Индия">Индия</option>
-						<option value = "Индонезия">Индонезия</option>
-						<option value = "Иран">Иран</option>
-						<option value = "Ирландия">Ирландия</option>
-						<option value = "Исландия">Исландия</option>
-						<option value = "Испания">Испания</option>
-						<option value = "Италия">Италия</option>
-						<option value = "Казахстан">Казахстан</option>
-						<option value = "Канада">Канада</option>
-						<option value = "Кения">Кения</option>
-						<option value = "Китай">Китай</option>
-						<option value = "Колумбия">Колумбия</option>
-						<option value = "Куба">Куба</option>
-						<option value = "Латвия">Латвия</option>
-						<option value = "Литва">Литва</option>
-						<option value = "Люксембург">Люксембург</option>
-						<option value = "Мексика">Мексика</option>
-						<option value = "Молдавия">Молдавия</option>
-						<option value = "Монако">Монако</option>
-						<option value = "Монголия">Монголия</option>
-						<option value = "Нидерланды">Нидерланды</option>
-						<option value = "Новая Зеландия">Новая Зеландия</option>
-						<option value = "Норвегия">Норвегия</option>
-						<option value = "Парагвай">Парагвай</option>
-						<option value = "Польша">Польша</option>
-						<option value = "Португалия">Португалия</option>
-						<option value = "Россия">Россия</option>
-						<option value = "Румыния">Румыния</option>
-						<option value = "Сербия">Сербия</option>
-						<option value = "Сингапур">Сингапур</option>
-						<option value = "Словакия">Словакия</option>
-						<option value = "Словения">Словения</option>
-						<option value = "СССР">СССР</option>
-						<option value = "США">США</option>
-						<option value = "Таджикистан">Таджикистан</option>
-						<option value = "Турция">Турция</option>
-						<option value = "Украина">Украина</option>
-						<option value = "Финляндия">Финляндия</option>
-						<option value = "Франция">Франция</option>
-						<option value = "Хорватия">Хорватия</option>
-						<option value = "Чехия">Чехия</option>
-						<option value = "Швейцария">Швейцария</option>
-						<option value = "Швеция">Швеция</option>
-						<option value = "Шотландия">Шотландия</option>
-						<option value = "Эстония">Эстония</option>
-						<option value = "ЮАР">ЮАР</option>
-						<option value = "Япония">Япония</option>
-                    </select>
-                </label>
-
-				<label class = "label-text" >
-					Жанр
-                    <select id="iGenre">
-                        <option value = "Боевик">Боевик</option>
-                        <option value = "Вестерн">Вестерн</option>
-                        <option value = "Гангстерский фильм">Гангстерский фильм</option>
-                        <option value = "Детектив">Детектив</option>
-                        <option value = "Драма">Драма</option>
-                        <option value = "Исторический фильм">Исторический фильм</option>
-                        <option value = "Комедия">Комедия</option>
-                        <option value = "Мелодрама">Мелодрама</option>
-                        <option value = "Музыкальный фильм">Музыкальный фильм</option>
-                        <option value = "Нуар">Нуар</option>
-                        <option value = "Политический фильм">Политический фильм</option>
-                        <option value = "Документальный фильм">Документальный фильм</option>
-                        <option value = "Приключенческий фильм">Приключенческий фильм</option>
-                        <option value = "Сказка">Сказка</option>
-                        <option value = "Трагедия">Трагедия</option>
-                        <option value = "Трагикомедия">Трагикомедия</option>
-                        <option value = "Триллер">Триллер</option>
-                        <option value = "Фантастический фильм">Фантастический фильм</option>
-                        <option value = "Фильм ужасов">Фильм ужасов</option>
-						<option value = "Фильм-катастрофа">Фильм-катастрофа</option>
-                    </select>
-                </label>
-
-                <label class = "label-text">
-                    Режиссер (можно несколько) 
-                    <input id = "iDirector1" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр"> 
-                    <input id = "iDirector2" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
-                    <input id = "iDirector3" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр"> 
-                </label>
-
-                <label class = "label-text">
-                    Сценарий 
-                    <textarea id = "iFilmScript" name="text"  title = "Поле не должно начинаться с пробела или полностью состоять из пробелов"></textarea>
-                </label>
-
-                <label class = "label-text">
-                    Продюсер
-                    <input id = "iProducer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
-                </label>
-
-                <label class = "label-text">
-                    Оператор
-                    <input id = "iOperator" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
-                </label>
-
-                <label class = "label-text">
-                    Композитор
-                    <input id = "iComposer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
-                </label>
-
-                <label class = "label-text">
-                    Бюджет
-                    <input id = "iBudget"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа">
-                    <select id = "iBudgetCurrency">
-                        <option value = "долларов">долларов</option>
-                        <option value = "евро">евро</option>
-                        <option value = "рублей">рублей</option>
-                    </select>
-                </label>
-
-                <label class = "label-text">
-                    Мировые сборы
-                    <input id = "iFilmBoxOffice"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа">
-                    <select id = "iFilmBoxOfficeCurrency">
-                        <option value = "долларов">долларов</option>
-                        <option value = "евро">евро</option>
-                        <option value = "рублей">рублей</option>
-                    </select>
-                </label>
-
-                <label class = "label-text" >
-					Возрастной ценз
-                    <select id="iAge">
-                        <option value = "0+">0+</option>
-                        <option value = "6+">6+</option>
-                        <option value = "12+">12+</option>
-                        <option value = "16+">16+</option>
-                        <option value = "18+">18+</option>
-                    </select>
-                </label>
-
-                <label class = "label-text">
-                    Длительность
-                    <input id = "iHours"  placeholder="2 ч" type = "number" min = "0"  step = "1">	
-                    <input id = "iMinutes"  placeholder="30 м" type = "number" min = "0" max = "59"  step = "1">	
-                    <input id = "iSeconds" placeholder="50 с" type = "number" min = "0" max = "59"  step = "1">
-                </label>
-
-                <label class = "label-text" for="photo">
-                    Постер (файл может быть только формата jpeg)
-				    <input type = "text" id="iPhoto" name="photo" placeholder="https://...">	
-                </label>
-
-                <label class = "label-text">
-                    Дата выхода
-				    <input id = "iDay"  placeholder="1" type = "number" min = "1" max = "31"  step = "1" title = "Поле должно содержать числа от 1 до 31">	
-                    <input id = "iMonth"  placeholder="1" type = "number" min = "1" max = "12"  step = "1" title = "Поле должно содержать числа от 1 до 12">	
-                    <input id = "iYear" placeholder="1970" type = "number" min = "1800" max = "2100"  step = "1" title = "Поле должно содержать числа от 1800 до 2100">	
-                </label>
-
-                <button type = "submit">Добавить</button>
-			    <button type = "reset">Очистить</button>
-                <div id = "message"> </div>
-            </form>
-		</div>
 	</main>
 	<footer> 
 		<div class="div-footer">
@@ -302,7 +118,6 @@
 			<p>Copyright 2021. All rights reserved. </p>
 		</div>
 	</footer>
-	<script src = "scripts/create movie.js"></script>
 	<script src = "scripts/add film on page.js"></script>
 </body> 
 </html>
