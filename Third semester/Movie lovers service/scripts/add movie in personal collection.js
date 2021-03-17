@@ -336,7 +336,6 @@ function addMovieOnPagePC(movie){
                 addMovieOnPagePC(allMoviesPC[i]);
             }
         }
-        
     }
 
     //--------------------------------------------------------

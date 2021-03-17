@@ -12,7 +12,64 @@ function addMoviesOnPage(){
     if(allMoviesInLS!=null){
         for(let i=0; i<allMoviesInLS.length; i++) addMovieOnPage(allMoviesInLS[i]);
     }
+}
+
+function filter(){
+    document.querySelectorAll(".card-movie").forEach(e => e.remove());
     
+    let country = document.getElementById("iCountryFilter").value;
+    let genre = document.getElementById("iGenreFilter").value;
+    let year = document.getElementById("iYearFilter").value;
+    
+    //Получаю коллекцию фильмов из LS
+    let allMoviesInLS =  JSON.parse(localStorage.getItem('generalCollection'));
+    
+    //Отрисовываю из LS карточки тех фильмов, которые соответствуют параметрам
+    if(allMoviesInLS!=null){
+
+        if(country != "Любая" & genre != "Любой" & year != "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                if(allMoviesInLS[i].country == country & allMoviesInLS[i].genre == genre & allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+
+        if(country != "Любая" & genre != "Любой" & year == "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                if(allMoviesInLS[i].country == country & allMoviesInLS[i].genre == genre) addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+
+        if(country != "Любая" & genre == "Любой" & year != "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                if(allMoviesInLS[i].country == country & allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+        if(country != "Любая" & genre == "Любой" & year == "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                if(allMoviesInLS[i].country == country) addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+        if(country == "Любая" & genre != "Любой" & year != "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                if(allMoviesInLS[i].genre == genre & allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+        if(country == "Любая" & genre != "Любой" & year == "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                if( allMoviesInLS[i].genre == genre) addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+        if(country == "Любая" & genre == "Любой" & year != "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                if(allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+        if(country == "Любая" & genre == "Любой" & year == "Любой") {
+            for(let i=0; i<allMoviesInLS.length; i++){
+                addMovieOnPage(allMoviesInLS[i]);
+            }
+        }
+    }
 }
 
 
@@ -252,16 +309,16 @@ function addMovieOnPage(movie){
     let seconds;
 
     if (movie.hours == '') hours = "00";
-    else if (movie.hours < 10 & hours!="00") hours = "0" + movie.hours; 
+    else if (movie.hours < 10 & hours!= "00") hours = "0" + movie.hours; 
     else hours = movie.hours;
 
 
     if (movie.minutes == '') minutes = "00";
-    else if (movie.minutes < 10 & minutes!="00") minutes = "0" + movie.minutes; 
+    else if (movie.minutes < 10 & minutes!= "00") minutes = "0" + movie.minutes; 
     else minutes = movie.minutes;
 
     if (movie.seconds == '') seconds = "00";
-    else if (movie.seconds < 10 & seconds!="00") seconds = "0" + movie.seconds; 
+    else if (movie.seconds < 10 & seconds!= "00") seconds = "0" + movie.seconds; 
     else seconds = movie.seconds;
 
     movieDescriptionTime.textContent = hours + ":" + minutes + ":" + seconds;

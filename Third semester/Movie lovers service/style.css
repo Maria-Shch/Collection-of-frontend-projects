@@ -110,13 +110,49 @@ input[type=text]:focus {
     text-align: center;
     padding-left: 2px;
 }
-#iCountry, #iGenre{
+#iGenre, #iGenreFilter{
     margin-left: 15px;
     color: #f8f8f8e0;
     font-size: 18px;
     font-weight: bold;
     background-color: #1c2c30c9;
-    width: 250px;
+    width: 260px;
+    height: 30px;
+    padding-left: 0px;
+    border-radius: 11px;
+    border: 1px solid #1c89a185;
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+    text-align: center;
+    padding-left: 2px;
+}
+
+#iCountry, #iCountryFilter{
+    margin-left: 15px;
+    color: #f8f8f8e0;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #1c2c30c9;
+    width: 180px;
+    height: 30px;
+    padding-left: 0px;
+    border-radius: 11px;
+    border: 1px solid #1c89a185;
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+    text-align: center;
+    padding-left: 2px;
+}
+
+#iyear, #iYearFilter{
+    margin-left: 15px;
+    color: #f8f8f8e0;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #1c2c30c9;
+    width: 90px;
     height: 30px;
     padding-left: 0px;
     border-radius: 11px;
@@ -332,9 +368,34 @@ input[type=button]:active{
 }
 
 
+.contaier-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #061c20a1;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
 
+.label-text-filter{
+	color:#f8f8f8e0;
+	font: 25px Graphik,sans-serif;
+    display: flex;
+    flex-direction: row;
+	justify-content: left;
+	align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
-
+#button-filter{
+    width: 100px;
+}
 
 
 
