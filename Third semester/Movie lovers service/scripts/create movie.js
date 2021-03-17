@@ -2,12 +2,12 @@
 // 2. Страна Country
 // 3. Жанр Genre
 // 4. Режиссер Director1, 2, 3
-// 5. Сценарий FilmScript
+// 5. Сценарий MovieScript
 // 6. Продюсер Producer
 // 7. Оператор Operator
 // 8. Композитор Composer
 // 9. Бюджет Budget
-// 10. Сборы мировые FilmBoxOffice
+// 10. Сборы мировые MovieBoxOffice
 // 11. Рейтинг возраста age
 // 12. Длительность Hours,  Minutes, Seconds
 // 13. Постер photo
@@ -24,14 +24,14 @@ class Movie{
         this.director1 = document.getElementById("iDirector1").value.trim(),
         this.director2 = document.getElementById("iDirector2").value.trim(),
         this.director3 = document.getElementById("iDirector3").value.trim(),
-        this.filmScript = document.getElementById("iFilmScript").value.trim(),
+        this.movieScript = document.getElementById("iMovieScript").value.trim(),
         this.producer = document.getElementById("iProducer").value.trim(),
         this.operator = document.getElementById("iOperator").value.trim(), 
         this.composer = document.getElementById("iComposer").value.trim(), 
         this.budget = document.getElementById("iBudget").value.trim(), 
         this.budgetCurrency = document.getElementById("iBudgetCurrency").value.trim(), 
-        this.filmBoxOffice = document.getElementById("iFilmBoxOffice").value.trim(),
-        this.filmBoxOfficeCurrency = document.getElementById("iFilmBoxOfficeCurrency").value.trim(),
+        this.movieBoxOffice = document.getElementById("iMovieBoxOffice").value.trim(),
+        this.movieBoxOfficeCurrency = document.getElementById("iMovieBoxOfficeCurrency").value.trim(),
         this.age = document.getElementById("iAge").value,
         this.hours = document.getElementById("iHours").value.trim(),
         this.minutes = document.getElementById("iMinutes").value.trim(), 
@@ -42,24 +42,25 @@ class Movie{
 }
 
 
-formFilm.addEventListener("submit", sumbitForm);
+formMovie.addEventListener("submit", sumbitForm);
 
 function sumbitForm(){
     clearDivMessageError();
     if(checkEmptyInput() == false){
-        createFilm();
+        createMovie();
         addMessageSuccess("Фильм успешно добавлен в коллекцию!");
     }
+    event.preventDefault();
 }
 
-function createFilm(){
-    let film = new Movie();
+function createMovie(){
+    let movie = new Movie();
 
     if(JSON.parse(localStorage.getItem('generalCollection')) != null){
         generalCollection = JSON.parse(localStorage.getItem('generalCollection'));
     }
 
-    generalCollection.push(film);
+    generalCollection.push(movie);
 
     localStorage.setItem('generalCollection', JSON.stringify(generalCollection));
 }
@@ -84,7 +85,7 @@ function checkEmptyInput(){
     //     addMessageError("Вы не заполнили первое поле Режиссер");
     //     res = true;
     // }
-    // if(document.getElementById("iFilmScript").value.trim() == ""){
+    // if(document.getElementById("iMovieScript").value.trim() == ""){
     //     addMessageError("Вы не заполнили поле Сценарий");
     //     res = true;
     // }

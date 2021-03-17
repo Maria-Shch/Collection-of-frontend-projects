@@ -1,17 +1,17 @@
 //Отрисовка всех фильмов на страницу из LS
-addFilmsOnPage();
+addMoviesOnPage();
 
-function addFilmsOnPage(){
+function addMoviesOnPage(){
     //Удаляю всю прежнюю отрисовку карточек фильмов
     document.querySelectorAll(".card-movie").forEach(e => e.remove());
 
     //Получаю коллекцию фильмов из LS
-    let allFilmsInLS =  JSON.parse(localStorage.getItem('generalCollection'));
+    let allMoviesInLS =  JSON.parse(localStorage.getItem('generalCollection'));
     
     //Если в LS были фильмы, отрисовываю их карточки
-    if(allFilmsInLS!=null){
-        for(let i=0; i<allFilmsInLS.length; i++){
-            addFilmOnPage(allFilmsInLS[i]);
+    if(allMoviesInLS!=null){
+        for(let i=0; i<allMoviesInLS.length; i++){
+            addMovieOnPage(allMoviesInLS[i]);
         }
     }
     
@@ -19,7 +19,7 @@ function addFilmsOnPage(){
 
 
 //Функция создаёт карточку фильма и добавляет её на страницу
-function addFilmOnPage(film){
+function addMovieOnPage(movie){
     
     let containerMain = document.getElementById("container-main");
 
@@ -28,7 +28,7 @@ function addFilmOnPage(film){
 
     let movieTitle = document.createElement('p');
     movieTitle.setAttribute("class", "movie-title");
-    movieTitle.textContent = film.titleMovie;
+    movieTitle.textContent = movie.titleMovie;
 
     let cardMovieRow = document.createElement('div');
     cardMovieRow.setAttribute("class", "card-movie__row");
@@ -43,7 +43,7 @@ function addFilmOnPage(film){
 
     let img = document.createElement('img');
     img.setAttribute("class", "img");
-    img.src = film.photo;
+    img.src = movie.photo;
 
     movieImg.appendChild(img);
     //-----------------------------------------
@@ -61,7 +61,7 @@ function addFilmOnPage(film){
 
     let movieDescriptionTitle = document.createElement('p');
     movieDescriptionTitle.setAttribute("class", "movie-description");
-    movieDescriptionTitle.textContent = film.titleMovie;
+    movieDescriptionTitle.textContent = movie.titleMovie;
 
     movieInformRowTitle.appendChild(movieParamTitle);
     movieInformRowTitle.appendChild(movieDescriptionTitle); 
@@ -77,7 +77,7 @@ function addFilmOnPage(film){
 
     let movieDescriptionCountry = document.createElement('p');
     movieDescriptionCountry.setAttribute("class", "movie-description");
-    movieDescriptionCountry.textContent = film.country;
+    movieDescriptionCountry.textContent = movie.country;
 
     movieInformRowCountry.appendChild(movieParamCountry);
     movieInformRowCountry.appendChild(movieDescriptionCountry); 
@@ -93,7 +93,7 @@ function addFilmOnPage(film){
 
     let movieDescriptionGenre = document.createElement('p');
     movieDescriptionGenre.setAttribute("class", "movie-description");
-    movieDescriptionGenre.textContent = film.genre;
+    movieDescriptionGenre.textContent = movie.genre;
 
     movieInformRowGenre.appendChild(movieParamGenre);
     movieInformRowGenre.appendChild(movieDescriptionGenre);
@@ -110,17 +110,17 @@ function addFilmOnPage(film){
     let movieDescriptionDirector = document.createElement('p');
     movieDescriptionDirector.setAttribute("class", "movie-description");
 
-    if (film.director2 != "" & film.director3 == ""){
-        movieDescriptionDirector.textContent = film.director1 + ", " +  film.director2;
-        console.log(film.director2);
+    if (movie.director2 != "" & movie.director3 == ""){
+        movieDescriptionDirector.textContent = movie.director1 + ", " +  movie.director2;
+        console.log(movie.director2);
     }
-    else if (film.director3 != "" & film.director2 == ""){
-        movieDescriptionDirector.textContent = film.director1 + ", " + film.director3;
+    else if (movie.director3 != "" & movie.director2 == ""){
+        movieDescriptionDirector.textContent = movie.director1 + ", " + movie.director3;
     }
-    else if (film.director3 != "" & film.director2 != ""){
-        movieDescriptionDirector.textContent = film.director1 + ", " + film.director2 + ", " + film.director3;
+    else if (movie.director3 != "" & movie.director2 != ""){
+        movieDescriptionDirector.textContent = movie.director1 + ", " + movie.director2 + ", " + movie.director3;
     }
-    else movieDescriptionDirector.textContent = film.director1;
+    else movieDescriptionDirector.textContent = movie.director1;
 
     movieInformRowDirector.appendChild(movieParamDirector);
     movieInformRowDirector.appendChild(movieDescriptionDirector);
@@ -128,19 +128,19 @@ function addFilmOnPage(film){
     
     //--------------------------------------------------------
 
-    let movieInformRowFilmScript = document.createElement('div');
-    movieInformRowFilmScript.setAttribute("class", "movie-inform__row");
+    let movieInformRowMoviescript = document.createElement('div');
+    movieInformRowMoviescript.setAttribute("class", "movie-inform__row");
 
-    let movieParamFilmScript = document.createElement('pre');
-    movieParamFilmScript.setAttribute("class", "movie-param");
-    movieParamFilmScript.textContent = "Сценарий: ";
+    let movieParamMoviescript = document.createElement('pre');
+    movieParamMoviescript.setAttribute("class", "movie-param");
+    movieParamMoviescript.textContent = "Сценарий: ";
 
-    let movieDescriptionFilmScript = document.createElement('p');
-    movieDescriptionFilmScript.setAttribute("class", "movie-description");
-    movieDescriptionFilmScript.textContent = film.filmScript;
+    let movieDescriptionMoviescript = document.createElement('p');
+    movieDescriptionMoviescript.setAttribute("class", "movie-description");
+    movieDescriptionMoviescript.textContent = movie.Moviescript;
 
-    movieInformRowFilmScript.appendChild(movieParamFilmScript);
-    movieInformRowFilmScript.appendChild(movieDescriptionFilmScript);
+    movieInformRowMoviescript.appendChild(movieParamMoviescript);
+    movieInformRowMoviescript.appendChild(movieDescriptionMoviescript);
 
     //--------------------------------------------------------
 
@@ -153,7 +153,7 @@ function addFilmOnPage(film){
 
     let movieDescriptionProducer = document.createElement('p');
     movieDescriptionProducer.setAttribute("class", "movie-description");
-    movieDescriptionProducer.textContent = film.producer;
+    movieDescriptionProducer.textContent = movie.producer;
 
     movieInformRowProducer.appendChild(movieParamProducer);
     movieInformRowProducer.appendChild(movieDescriptionProducer);
@@ -169,7 +169,7 @@ function addFilmOnPage(film){
 
     let movieDescriptionOperator = document.createElement('p');
     movieDescriptionOperator.setAttribute("class", "movie-description");
-    movieDescriptionOperator.textContent = film.operator;
+    movieDescriptionOperator.textContent = movie.operator;
 
     movieInformRowOperator.appendChild(movieParamOperator);
     movieInformRowOperator.appendChild(movieDescriptionOperator);
@@ -185,7 +185,7 @@ function addFilmOnPage(film){
 
     let movieDescriptionComposer = document.createElement('p');
     movieDescriptionComposer.setAttribute("class", "movie-description");
-    movieDescriptionComposer.textContent = film.composer;
+    movieDescriptionComposer.textContent = movie.composer;
 
     movieInformRowComposer.appendChild(movieParamComposer);
     movieInformRowComposer.appendChild(movieDescriptionComposer);
@@ -201,26 +201,26 @@ function addFilmOnPage(film){
 
     let movieDescriptionBudget = document.createElement('p');
     movieDescriptionBudget.setAttribute("class", "movie-description");
-    movieDescriptionBudget.textContent = film.budget + ' ' + film.budgetCurrency;
+    movieDescriptionBudget.textContent = movie.budget + ' ' + movie.budgetCurrency;
 
     movieInformRowBudget.appendChild(movieParamBudget);
     movieInformRowBudget.appendChild(movieDescriptionBudget);
 
     //--------------------------------------------------------
 
-    let movieInformRowFilmBoxOffice = document.createElement('div');
-    movieInformRowFilmBoxOffice.setAttribute("class", "movie-inform__row");
+    let movieInformRowmovieBoxOffice = document.createElement('div');
+    movieInformRowmovieBoxOffice.setAttribute("class", "movie-inform__row");
 
-    let movieParamFilmBoxOffice = document.createElement('pre');
-    movieParamFilmBoxOffice.setAttribute("class", "movie-param");
-    movieParamFilmBoxOffice.textContent = "Сборы мировые: ";
+    let movieParammovieBoxOffice = document.createElement('pre');
+    movieParammovieBoxOffice.setAttribute("class", "movie-param");
+    movieParammovieBoxOffice.textContent = "Сборы мировые: ";
 
-    let movieDescriptionFilmBoxOffice = document.createElement('p');
-    movieDescriptionFilmBoxOffice.setAttribute("class", "movie-description");
-    movieDescriptionFilmBoxOffice.textContent = film.filmBoxOffice + ' ' + film.filmBoxOfficeCurrency;
+    let movieDescriptionmovieBoxOffice = document.createElement('p');
+    movieDescriptionmovieBoxOffice.setAttribute("class", "movie-description");
+    movieDescriptionmovieBoxOffice.textContent = movie.movieBoxOffice + ' ' + movie.movieBoxOfficeCurrency;
 
-    movieInformRowFilmBoxOffice.appendChild(movieParamFilmBoxOffice);
-    movieInformRowFilmBoxOffice.appendChild(movieDescriptionFilmBoxOffice);
+    movieInformRowmovieBoxOffice.appendChild(movieParammovieBoxOffice);
+    movieInformRowmovieBoxOffice.appendChild(movieDescriptionmovieBoxOffice);
 
     //--------------------------------------------------------
 
@@ -233,7 +233,7 @@ function addFilmOnPage(film){
 
     let movieDescriptionAge = document.createElement('p');
     movieDescriptionAge.setAttribute("class", "movie-description");
-    movieDescriptionAge.textContent = film.age;
+    movieDescriptionAge.textContent = movie.age;
 
     movieInformRowAge.appendChild(movieParamAge);
     movieInformRowAge.appendChild(movieDescriptionAge);
@@ -254,17 +254,17 @@ function addFilmOnPage(film){
     let minutes;
     let seconds;
 
-    if(film.hours == undefined)  hours = "00";
-    if(film.hours < 10) hours = "0" + film.hours; 
-    else hours = film.hours;
+    if(movie.hours == undefined)  hours = "00";
+    if(movie.hours < 10) hours = "0" + movie.hours; 
+    else hours = movie.hours;
 
-    if(film.minutes < 10)  minutes = "0" + film.minutes;
-    if(film.minutes == undefined) minutes = "00";
-    else minutes = film.minutes;
+    if(movie.minutes < 10)  minutes = "0" + movie.minutes;
+    if(movie.minutes == undefined) minutes = "00";
+    else minutes = movie.minutes;
 
-    if(film.seconds < 10) seconds = "0" + film.seconds;
-    if(film.seconds == undefined) seconds = "00";
-    else seconds = film.seconds;
+    if(movie.seconds < 10) seconds = "0" + movie.seconds;
+    if(movie.seconds == undefined) seconds = "00";
+    else seconds = movie.seconds;
 
     movieDescriptionTime.textContent = hours + ":" + minutes + ":" + seconds;
 
@@ -284,7 +284,7 @@ function addFilmOnPage(film){
     movieDescriptionDate.setAttribute("class", "movie-description");
 
     //Приходится заново создавать объект Date, т.к. после LS он перестаёт быть объектом Date, становится простой строкой
-    let date = new Date(film.date);
+    let date = new Date(movie.date);
     let day;
     let month;
 
@@ -305,12 +305,12 @@ function addFilmOnPage(film){
     movieInform.appendChild(movieInformRowCountry);
     movieInform.appendChild(movieInformRowGenre);
     movieInform.appendChild(movieInformRowDirector);
-    movieInform.appendChild(movieInformRowFilmScript);
+    movieInform.appendChild(movieInformRowMoviescript);
     movieInform.appendChild(movieInformRowProducer);
     movieInform.appendChild(movieInformRowOperator);
     movieInform.appendChild(movieInformRowComposer);
     movieInform.appendChild(movieInformRowBudget);
-    movieInform.appendChild(movieInformRowFilmBoxOffice);
+    movieInform.appendChild(movieInformRowmovieBoxOffice);
     movieInform.appendChild(movieInformRowAge);
     movieInform.appendChild(movieInformRowTime);
     movieInform.appendChild(movieInformRowDate);

@@ -128,7 +128,7 @@ input[type=text]:focus {
     padding-left: 2px;
 }
 
-#iBudget, #iFilmBoxOffice, #iAge, #iFilmBoxOfficeCurrency, #iBudgetCurrency{ 
+#iBudget, #iMovieBoxOffice, #iAge, #iMovieBoxOfficeCurrency, #iBudgetCurrency{ 
     margin-left: 15px;
     color: #f8f8f8e0;
     font-size: 18px;
