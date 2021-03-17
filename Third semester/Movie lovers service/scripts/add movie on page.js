@@ -254,16 +254,17 @@ function addMovieOnPage(movie){
     let minutes;
     let seconds;
 
-    if(movie.hours == undefined)  hours = "00";
-    if(movie.hours < 10) hours = "0" + movie.hours; 
+    if (movie.hours == '') hours = "00";
+    else if (movie.hours < 10 & hours!="00") hours = "0" + movie.hours; 
     else hours = movie.hours;
 
-    if(movie.minutes < 10)  minutes = "0" + movie.minutes;
-    if(movie.minutes == undefined) minutes = "00";
+
+    if (movie.minutes == '') minutes = "00";
+    else if (movie.minutes < 10 & minutes!="00") minutes = "0" + movie.minutes; 
     else minutes = movie.minutes;
 
-    if(movie.seconds < 10) seconds = "0" + movie.seconds;
-    if(movie.seconds == undefined) seconds = "00";
+    if (movie.seconds == '') seconds = "00";
+    else if (movie.seconds < 10 & seconds!="00") seconds = "0" + movie.seconds; 
     else seconds = movie.seconds;
 
     movieDescriptionTime.textContent = hours + ":" + minutes + ":" + seconds;
@@ -287,14 +288,25 @@ function addMovieOnPage(movie){
     let date = new Date(movie.date);
     let day;
     let month;
+    let year;
 
     if(date.getDate() < 10) day = "0" + date.getDate();
     else day = date.getDate();
+    
 
-    if(date.getMonth()+1 < 10)  month = "0" + (date.getMonth()+1);
-    else month = date.getMonth() + 1;
+    if(date.getMonth() < 10){
+        month = "0" + (date.getMonth());
 
-    movieDescriptionDate.textContent = day + "." + month + "." + date.getFullYear();
+        if(date.getMonth() == "00" ) month = "12";
+    }
+
+    else  month = date.getMonth();
+
+
+    if(month == "12") year = date.getFullYear()-1;
+    else year = date.getFullYear();
+
+    movieDescriptionDate.textContent = day + "." + month + "." + year
 
     movieInformRowDate.appendChild(movieParamDate);
     movieInformRowDate.appendChild(movieDescriptionDate);

@@ -37,7 +37,7 @@ class Movie{
         this.minutes = document.getElementById("iMinutes").value.trim(), 
         this.seconds = document.getElementById("iSeconds").value.trim(), 
         this.photo = document.getElementById("iPhoto").value.trim(),
-        this.date = new Date(document.getElementById("iYear").value.trim(), document.getElementById("iMonth").value.trim()-1, document.getElementById("iDay").value.trim())
+        this.date = new Date(document.getElementById("iYear").value.trim(), document.getElementById("iMonth").value.trim(), document.getElementById("iDay").value.trim())
     }
 }
 
