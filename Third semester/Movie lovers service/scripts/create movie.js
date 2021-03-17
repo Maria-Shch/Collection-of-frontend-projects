@@ -18,6 +18,15 @@ let generalCollection = [];
 
 class Movie{
     constructor(){
+        // Для задания id смотрю, есть в LS коллекция с фильмами
+        // Если коллекция есть, то присваиваю очередному фильму 
+        // id на единицу больше, чем у последнего фильма в коллекции
+        // Иначе, если LS пуст, начинаю с нуля
+        if(JSON.parse(localStorage.getItem('generalCollection')) != null){
+            generalCollection = JSON.parse(localStorage.getItem('generalCollection'));
+            this.id = generalCollection[generalCollection.length-1].id + 1;
+        }
+        else this.id = 0;
         this.titleMovie = document.getElementById("iTitleMovie").value.trim(),
         this.country = document.getElementById("iCountry").value.trim(),
         this.genre = document.getElementById("iGenre").value.trim(),

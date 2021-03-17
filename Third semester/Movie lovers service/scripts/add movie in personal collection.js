@@ -1,23 +1,19 @@
-//Отрисовка всех фильмов на страницу из LS
-addMoviesOnPage();
+addMoviesOnPagePersonalCollect();
 
-function addMoviesOnPage(){
+function addMoviesOnPagePersonalCollect(){
     //Удаляю всю прежнюю отрисовку карточек фильмов
     document.querySelectorAll(".card-movie").forEach(e => e.remove());
 
     //Получаю коллекцию фильмов из LS
-    let allMoviesInLS =  JSON.parse(localStorage.getItem('generalCollection'));
+    let allMoviesInLS =  JSON.parse(localStorage.getItem('personalCollection'));
     
     //Если в LS были фильмы, отрисовываю их карточки
     if(allMoviesInLS!=null){
-        for(let i=0; i<allMoviesInLS.length; i++) addMovieOnPage(allMoviesInLS[i]);
+        for(let i=0; i<allMoviesInLS.length; i++) addMovieOnPagePC(allMoviesInLS[i]);
     }
-    
 }
 
-
-//Функция создаёт карточку фильма и добавляет её на страницу
-function addMovieOnPage(movie){
+function addMovieOnPagePC(movie){
     
     let containerMain = document.getElementById("container-main");
 
@@ -313,44 +309,36 @@ function addMovieOnPage(movie){
 
     let buttonAddMoviePersCol = document.createElement('input');
     buttonAddMoviePersCol.type = "button";
-    buttonAddMoviePersCol.value = "Добавить в свою коллекцию";
+    buttonAddMoviePersCol.value = "Удалить из своей коллекции";
 
-
-
-
-
-    // Просматариваю персональную коллекцию
-    // Если в ней уже есть фильм, то для него на кнопке устанавливаю 
-    // buttonAddMoviePersCol.value = "Фильм добавлен";
-    // Это заблокирует повторное добавление одного и того же фильма в персональную коллекцию
-
-    let allMoviesInLPC =  JSON.parse(localStorage.getItem('personalCollection'));
-    
-    if(allMoviesInLPC!=null){
-        for(let i=0; i<allMoviesInLPC.length; i++) {
-            if(allMoviesInLPC[i].id == movie.id) buttonAddMoviePersCol.value = "Фильм добавлен";
-        }
-    }
-
-
-
-
-    buttonAddMoviePersCol.onclick = function addClick(){
-        if(buttonAddMoviePersCol.value != "Фильм добавлен"){
-            buttonAddMoviePersCol.value = "Фильм добавлен";
+    buttonAddMoviePersCol.onclick = function deleteClick(){
         
-            let personalCollection = [];
-    
-            if(JSON.parse(localStorage.getItem('personalCollection')) != null){
-                personalCollection = JSON.parse(localStorage.getItem('personalCollection'));
+        //Удаляю всю прежнюю отрисовку карточек фильмов
+        document.querySelectorAll(".card-movie").forEach(e => e.remove());
+
+        //Получаю коллекцию фильмов из LS
+        let allMoviesPC =  JSON.parse(localStorage.getItem('personalCollection'));
+
+
+        //Перебираю всю коллекцию фильмов и удаляю из коллекции выбранный по id
+        //После удаления помещаю коллекцию обратно в LS 
+        for(let i=0; i<allMoviesPC.length; i++){
+            if(allMoviesPC[i].id == movie.id){
+                allMoviesPC.pop(i);
+                localStorage.setItem('personalCollection', JSON.stringify(allMoviesPC));
             }
-        
-            personalCollection.push(movie);
-        
-            localStorage.setItem('personalCollection', JSON.stringify(personalCollection));
         }
+
+
+        //Если в LS есть фильмы, отрисовываю их карточки
+        if(allMoviesPC!=null){
+            for(let i=0; i<allMoviesPC.length; i++){
+                addMovieOnPagePC(allMoviesPC[i]);
+            }
+        }
+        
     }
-    
+
     //--------------------------------------------------------
 
     movieInform.appendChild(movieInformRowTitle);
