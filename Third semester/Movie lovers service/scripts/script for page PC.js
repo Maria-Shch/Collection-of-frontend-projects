@@ -1,5 +1,21 @@
-//Функция создаёт карточку фильма и добавляет её на страницу
- function addMovieOnPage(movie, collection){
+//import {addMoviesOnPage} from './addMoviesOnPage.js';
+addMoviesOnPage('personalCollection');
+
+function addMoviesOnPage(collection){
+    //Удаляю всю прежнюю отрисовку карточек фильмов
+    document.querySelectorAll(".card-movie").forEach(e => e.remove());
+
+    //Получаю коллекцию фильмов из LS
+    let allMoviesInLS =  JSON.parse(localStorage.getItem(collection));
+    
+    //Если в LS были фильмы, отрисовываю их карточки
+    if(allMoviesInLS!=null){
+        for(let i=0; i<allMoviesInLS.length; i++) addMovieOnPage(allMoviesInLS[i], collection);
+    }
+}
+
+//import {addMovieOnPage} from './add movie on page.js';
+function addMovieOnPage(movie, collection){
     
     let containerMain = document.getElementById("container-main");
 
@@ -292,47 +308,45 @@
 
 
     //--------------------------------------------------------
-    if(collection == 'generalCollection'){
-        let buttonAddMoviePersCol = document.createElement('input');
-        buttonAddMoviePersCol.type = "button";
-        buttonAddMoviePersCol.value = "Добавить в свою коллекцию";
+
+    let buttonAddMoviePersCol = document.createElement('input');
+    buttonAddMoviePersCol.type = "button";
+
+    // if(collection == 'generalCollection'){
+    //     buttonAddMoviePersCol.value = "Добавить в свою коллекцию";
 
 
-        // Просматариваю персональную коллекцию
-        // Если в ней уже есть фильм, то для него на кнопке устанавливаю 
-        // buttonAddMoviePersCol.value = "Фильм добавлен";
-        // Это заблокирует повторное добавление одного и того же фильма в персональную коллекцию
+    //     // Просматариваю персональную коллекцию
+    //     // Если в ней уже есть фильм, то для него на кнопке устанавливаю 
+    //     // buttonAddMoviePersCol.value = "Фильм добавлен";
+    //     // Это заблокирует повторное добавление одного и того же фильма в персональную коллекцию
 
-        let allMoviesInLPC =  JSON.parse(localStorage.getItem('personalCollection'));
+    //     let allMoviesInLPC =  JSON.parse(localStorage.getItem('personalCollection'));
         
-        if(allMoviesInLPC!=null){
-            for(let i=0; i<allMoviesInLPC.length; i++) {
-                if(allMoviesInLPC[i].id == movie.id) buttonAddMoviePersCol.value = "Фильм добавлен";
-            }
-        }
+    //     if(allMoviesInLPC!=null){
+    //         for(let i=0; i<allMoviesInLPC.length; i++) {
+    //             if(allMoviesInLPC[i].id == movie.id) buttonAddMoviePersCol.value = "Фильм добавлен";
+    //         }
+    //     }
 
-
-
-
-        buttonAddMoviePersCol.onclick = function addClick(){
-            if(buttonAddMoviePersCol.value != "Фильм добавлен"){
-                buttonAddMoviePersCol.value = "Фильм добавлен";
+    //     buttonAddMoviePersCol.onclick = function addClick(){
+    //         if(buttonAddMoviePersCol.value != "Фильм добавлен"){
+    //             buttonAddMoviePersCol.value = "Фильм добавлен";
             
-                let personalCollection = [];
+    //             let personalCollection = [];
         
-                if(JSON.parse(localStorage.getItem('personalCollection')) != null){
-                    personalCollection = JSON.parse(localStorage.getItem('personalCollection'));
-                }
+    //             if(JSON.parse(localStorage.getItem('personalCollection')) != null){
+    //                 personalCollection = JSON.parse(localStorage.getItem('personalCollection'));
+    //             }
             
-                personalCollection.push(movie);
-            
-                localStorage.setItem('personalCollection', JSON.stringify(personalCollection));
-            }
-        }
-    }
-    if (collection == 'personalCollection'){
-        let buttonAddMoviePersCol = document.createElement('input');
-        buttonAddMoviePersCol.type = "button";
+    //             personalCollection.push(movie);
+    //             localStorage.setItem('personalCollection', JSON.stringify(personalCollection));
+    //         }
+    //     }
+    // }
+
+
+    //if (collection == 'personalCollection'){
         buttonAddMoviePersCol.value = "Удалить из своей коллекции";
 
         buttonAddMoviePersCol.onclick = function deleteClick(){
@@ -357,11 +371,11 @@
             //Если в LS есть фильмы, отрисовываю их карточки
             if(allMoviesPC!=null){
                 for(let i=0; i<allMoviesPC.length; i++){
-                    addMovieOnPagePC(allMoviesPC[i]);
+                    addMovieOnPage(allMoviesPC[i]);
                 }
             }
         }
-    }
+    //}
     
     
     //--------------------------------------------------------
@@ -389,6 +403,6 @@
     cardMovie.appendChild(cardMovieRow);
     cardMovie.appendChild(buttonAddMoviePersCol);
 
-    
+
     containerMain.appendChild(cardMovie);
 }
