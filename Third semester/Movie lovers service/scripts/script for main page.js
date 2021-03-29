@@ -527,8 +527,8 @@ function addCommentsOnPage(movie){
         commentEmpty.textContent = "На этот фильм еще нет отзывов! Будьте первым!"
         commentsBlock.appendChild(commentEmpty);
     }
-    else if(commentsThisMovie!=null){
-        for(let i=0; i<commentsThisMovie.length; i++) addCommentOnPage(commentsThisMovie[i]);
+    else if(commentsThisMovie!=null){                                   //Оператор spread
+        for(let i=0; i<commentsThisMovie.length; i++) addCommentOnPage({...commentsThisMovie[i]});
     }
 
     let commentsButtonReset = document.createElement('input');
@@ -545,10 +545,7 @@ function addCommentsOnPage(movie){
     }
 }
 
-function addCommentOnPage(comment){
-    //Деструктуризация объекта comment
-    let { id, name, job, text, grade} = comment;
-
+function addCommentOnPage({name, job, text, grade}){
     let commentName = document.createElement('p');
     commentName.setAttribute("class", "comment-name");
     commentName.textContent = "(" + grade + ") " + name + ", " + job;
