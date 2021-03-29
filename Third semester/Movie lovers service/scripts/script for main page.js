@@ -10,12 +10,18 @@ function addMoviesOnPage(collection){
     
     //Если в LS были фильмы, отрисовываю их карточки
     if(allMoviesInLS!=null){
-        for(let i=0; i<allMoviesInLS.length; i++) addMovieOnPage(allMoviesInLS[i], collection);
+        for(let i=0; i<allMoviesInLS.length; i++) addMovieOnPage(allMoviesInLS[i]);
     }
 }
 
 //import {addMovieOnPage} from './add movie on page.js';
-function addMovieOnPage(movie, collection){
+function addMovieOnPage(movie){
+
+    //деструктуризация объекта movie
+    let {id, titleMovie, country, genre, director1, director2, director3, 
+        movieScript, producer, operator, composer, budget, budgetCurrency, 
+        movieBoxOffice, movieBoxOfficeCurrency, age, hours, minutes, 
+        seconds, photo, date} = movie;
     
     let containerMain = document.getElementById("container-main");
 
@@ -25,7 +31,7 @@ function addMovieOnPage(movie, collection){
 
     let movieTitle = document.createElement('p');
     movieTitle.setAttribute("class", "movie-title");
-    movieTitle.textContent = movie.titleMovie;
+    movieTitle.textContent = titleMovie;
 
     let cardMovieRow = document.createElement('div');
     cardMovieRow.setAttribute("class", "card-movie__row");
@@ -40,7 +46,7 @@ function addMovieOnPage(movie, collection){
 
     let img = document.createElement('img');
     img.setAttribute("class", "img");
-    img.src = movie.photo;
+    img.src = photo;
 
     movieImg.appendChild(img);
     //-----------------------------------------
@@ -58,7 +64,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionTitle = document.createElement('p');
     movieDescriptionTitle.setAttribute("class", "movie-description");
-    movieDescriptionTitle.textContent = movie.titleMovie;
+    movieDescriptionTitle.textContent = titleMovie;
 
     movieInformRowTitle.appendChild(movieParamTitle);
     movieInformRowTitle.appendChild(movieDescriptionTitle); 
@@ -74,7 +80,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionCountry = document.createElement('p');
     movieDescriptionCountry.setAttribute("class", "movie-description");
-    movieDescriptionCountry.textContent = movie.country;
+    movieDescriptionCountry.textContent = country;
 
     movieInformRowCountry.appendChild(movieParamCountry);
     movieInformRowCountry.appendChild(movieDescriptionCountry); 
@@ -90,7 +96,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionGenre = document.createElement('p');
     movieDescriptionGenre.setAttribute("class", "movie-description");
-    movieDescriptionGenre.textContent = movie.genre;
+    movieDescriptionGenre.textContent = genre;
 
     movieInformRowGenre.appendChild(movieParamGenre);
     movieInformRowGenre.appendChild(movieDescriptionGenre);
@@ -107,21 +113,20 @@ function addMovieOnPage(movie, collection){
     let movieDescriptionDirector = document.createElement('p');
     movieDescriptionDirector.setAttribute("class", "movie-description");
 
-    if (movie.director2 != "" & movie.director3 == ""){
-        movieDescriptionDirector.textContent = movie.director1 + ", " +  movie.director2;
+    if (director2 != "" & director3 == ""){
+        movieDescriptionDirector.textContent = director1 + ", " +  director2;
     }
-    else if (movie.director3 != "" & movie.director2 == ""){
-        movieDescriptionDirector.textContent = movie.director1 + ", " + movie.director3;
+    else if (director3 != "" & director2 == ""){
+        movieDescriptionDirector.textContent = director1 + ", " + director3;
     }
-    else if (movie.director3 != "" & movie.director2 != ""){
-        movieDescriptionDirector.textContent = movie.director1 + ", " + movie.director2 + ", " + movie.director3;
+    else if (director3 != "" & director2 != ""){
+        movieDescriptionDirector.textContent = director1 + ", " + director2 + ", " + director3;
     }
-    else movieDescriptionDirector.textContent = movie.director1;
+    else movieDescriptionDirector.textContent = director1;
 
     movieInformRowDirector.appendChild(movieParamDirector);
     movieInformRowDirector.appendChild(movieDescriptionDirector);
 
-    
     //--------------------------------------------------------
 
     let movieInformRowMoviescript = document.createElement('div');
@@ -133,7 +138,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionMoviescript = document.createElement('p');
     movieDescriptionMoviescript.setAttribute("class", "movie-description");
-    movieDescriptionMoviescript.textContent = movie.Moviescript;
+    movieDescriptionMoviescript.textContent = movieScript;
 
     movieInformRowMoviescript.appendChild(movieParamMoviescript);
     movieInformRowMoviescript.appendChild(movieDescriptionMoviescript);
@@ -149,7 +154,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionProducer = document.createElement('p');
     movieDescriptionProducer.setAttribute("class", "movie-description");
-    movieDescriptionProducer.textContent = movie.producer;
+    movieDescriptionProducer.textContent = producer;
 
     movieInformRowProducer.appendChild(movieParamProducer);
     movieInformRowProducer.appendChild(movieDescriptionProducer);
@@ -165,7 +170,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionOperator = document.createElement('p');
     movieDescriptionOperator.setAttribute("class", "movie-description");
-    movieDescriptionOperator.textContent = movie.operator;
+    movieDescriptionOperator.textContent = operator;
 
     movieInformRowOperator.appendChild(movieParamOperator);
     movieInformRowOperator.appendChild(movieDescriptionOperator);
@@ -181,7 +186,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionComposer = document.createElement('p');
     movieDescriptionComposer.setAttribute("class", "movie-description");
-    movieDescriptionComposer.textContent = movie.composer;
+    movieDescriptionComposer.textContent = composer;
 
     movieInformRowComposer.appendChild(movieParamComposer);
     movieInformRowComposer.appendChild(movieDescriptionComposer);
@@ -197,7 +202,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionBudget = document.createElement('p');
     movieDescriptionBudget.setAttribute("class", "movie-description");
-    movieDescriptionBudget.textContent = movie.budget + ' ' + movie.budgetCurrency;
+    movieDescriptionBudget.textContent = budget + ' ' + budgetCurrency;
 
     movieInformRowBudget.appendChild(movieParamBudget);
     movieInformRowBudget.appendChild(movieDescriptionBudget);
@@ -213,7 +218,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionmovieBoxOffice = document.createElement('p');
     movieDescriptionmovieBoxOffice.setAttribute("class", "movie-description");
-    movieDescriptionmovieBoxOffice.textContent = movie.movieBoxOffice + ' ' + movie.movieBoxOfficeCurrency;
+    movieDescriptionmovieBoxOffice.textContent = movieBoxOffice + ' ' + movieBoxOfficeCurrency;
 
     movieInformRowmovieBoxOffice.appendChild(movieParammovieBoxOffice);
     movieInformRowmovieBoxOffice.appendChild(movieDescriptionmovieBoxOffice);
@@ -229,7 +234,7 @@ function addMovieOnPage(movie, collection){
 
     let movieDescriptionAge = document.createElement('p');
     movieDescriptionAge.setAttribute("class", "movie-description");
-    movieDescriptionAge.textContent = movie.age;
+    movieDescriptionAge.textContent = age;
 
     movieInformRowAge.appendChild(movieParamAge);
     movieInformRowAge.appendChild(movieDescriptionAge);
@@ -246,24 +251,23 @@ function addMovieOnPage(movie, collection){
     let movieDescriptionTime = document.createElement('p');
     movieDescriptionTime.setAttribute("class", "movie-description");
 
-    let hours;
-    let minutes;
-    let seconds;
+    let hoursRes;
+    let minutesRes;
+    let secondsRes;
 
-    if (movie.hours == '') hours = "00";
-    else if (movie.hours < 10 & hours!= "00") hours = "0" + movie.hours; 
-    else hours = movie.hours;
+    if (hours == '') hoursRes = "00";
+    else if (hours < 10 & hoursRes!= "00") hoursRes = "0" + hours; 
+    else hoursRes = hours;
 
+    if (minutes == '') minutesRes = "00";
+    else if (minutes < 10 & minutesRes!= "00") minutesRes = "0" + minutes; 
+    else minutesRes = minutes;
 
-    if (movie.minutes == '') minutes = "00";
-    else if (movie.minutes < 10 & minutes!= "00") minutes = "0" + movie.minutes; 
-    else minutes = movie.minutes;
+    if (seconds == '') secondsRes = "00";
+    else if (seconds < 10 & secondsRes!= "00") secondsRes = "0" + seconds; 
+    else secondsRes = seconds;
 
-    if (movie.seconds == '') seconds = "00";
-    else if (movie.seconds < 10 & seconds!= "00") seconds = "0" + movie.seconds; 
-    else seconds = movie.seconds;
-
-    movieDescriptionTime.textContent = hours + ":" + minutes + ":" + seconds;
+    movieDescriptionTime.textContent = hoursRes + ":" + minutesRes + ":" + secondsRes;
 
     movieInformRowTime.appendChild(movieParamTime);
     movieInformRowTime.appendChild(movieDescriptionTime);
@@ -281,104 +285,64 @@ function addMovieOnPage(movie, collection){
     movieDescriptionDate.setAttribute("class", "movie-description");
 
     //Приходится заново создавать объект Date, т.к. после LS он перестаёт быть объектом Date, становится простой строкой
-    let date = new Date(movie.date);
+    let dateRes = new Date(date);
     let day;
     let month;
     let year;
 
-    if(date.getDate() < 10) day = "0" + date.getDate();
-    else day = date.getDate();
-    
+    if(dateRes.getDate() < 10) day = "0" + dateRes.getDate();
+    else day = dateRes.getDate();
 
-    if(date.getMonth() < 10){
-        month = "0" + (date.getMonth());
+    if(dateRes.getMonth() < 10){
+        month = "0" + (dateRes.getMonth());
 
-        if(date.getMonth() == "00" ) month = "12";
+        if(dateRes.getMonth() == "00" ) month = "12";
     }
 
-    else  month = date.getMonth();
+    else  month = dateRes.getMonth();
 
-
-    if(month == "12") year = date.getFullYear()-1;
-    else year = date.getFullYear();
+    if(month == "12") year = dateRes.getFullYear()-1;
+    else year = dateRes.getFullYear();
 
     movieDescriptionDate.textContent = day + "." + month + "." + year
 
     movieInformRowDate.appendChild(movieParamDate);
     movieInformRowDate.appendChild(movieDescriptionDate);
 
-
     //--------------------------------------------------------
 
+    let buttonAddMoviePersCol = document.createElement('input');
+    buttonAddMoviePersCol.type = "button";
+    buttonAddMoviePersCol.value = "Добавить в свою коллекцию";
+
+    // Просматариваю персональную коллекцию
+    // Если в ней уже есть фильм, то для него на кнопке устанавливаю 
+    // buttonAddMoviePersCol.value = "Фильм добавлен";
+    // Это заблокирует повторное добавление одного и того же фильма в персональную коллекцию
+
+    let allMoviesInLPC =  JSON.parse(localStorage.getItem('personalCollection'));
     
-
-    //if(collection == 'generalCollection'){
-        let buttonAddMoviePersCol = document.createElement('input');
-        buttonAddMoviePersCol.type = "button";
-        buttonAddMoviePersCol.value = "Добавить в свою коллекцию";
-
-        // Просматариваю персональную коллекцию
-        // Если в ней уже есть фильм, то для него на кнопке устанавливаю 
-        // buttonAddMoviePersCol.value = "Фильм добавлен";
-        // Это заблокирует повторное добавление одного и того же фильма в персональную коллекцию
-
-        let allMoviesInLPC =  JSON.parse(localStorage.getItem('personalCollection'));
-        
-        if(allMoviesInLPC!=null){
-            for(let i=0; i<allMoviesInLPC.length; i++) {
-                if(allMoviesInLPC[i].id == movie.id)buttonAddMoviePersCol.value = "Фильм добавлен";
-            }
+    if(allMoviesInLPC!=null){
+        for(let i=0; i<allMoviesInLPC.length; i++) {
+            if(allMoviesInLPC[i].id == id) buttonAddMoviePersCol.value = "Фильм добавлен";
         }
+    }
 
-        buttonAddMoviePersCol.onclick = function addClick(){
-            if(buttonAddMoviePersCol.value != "Фильм добавлен"){
-                buttonAddMoviePersCol.value = "Фильм добавлен";
-            
-                let personalCollection = [];
+    buttonAddMoviePersCol.onclick = function addClick(){
+        if(buttonAddMoviePersCol.value != "Фильм добавлен"){
+            buttonAddMoviePersCol.value = "Фильм добавлен";
         
-                if(JSON.parse(localStorage.getItem('personalCollection')) != null){
-                    personalCollection = JSON.parse(localStorage.getItem('personalCollection'));
-                }
-            
-                personalCollection.push(movie);
-                localStorage.setItem('personalCollection', JSON.stringify(personalCollection));
+            let personalCollection = [];
+    
+            if(JSON.parse(localStorage.getItem('personalCollection')) != null){
+                personalCollection = JSON.parse(localStorage.getItem('personalCollection'));
             }
+        
+            personalCollection.push(movie);
+            localStorage.setItem('personalCollection', JSON.stringify(personalCollection));
         }
-    //}
-
-
-    // if (collection == 'personalCollection')
-    //     buttonAddMoviePersCol.value = "Удалить из своей коллекции";
-
-    //     buttonAddMoviePersCol.onclick = function deleteClick(){
-            
-    //         //Удаляю всю прежнюю отрисовку карточек фильмов
-    //         document.querySelectorAll(".card-movie").forEach(e => e.remove());
-
-    //         //Получаю коллекцию фильмов из LS
-    //         let allMoviesPC =  JSON.parse(localStorage.getItem('personalCollection'));
-
-
-    //         //Перебираю всю коллекцию фильмов и удаляю из коллекции выбранный по id
-    //         //После удаления помещаю коллекцию обратно в LS 
-    //         for(let i=0; i<allMoviesPC.length; i++){
-    //             if(allMoviesPC[i].id == movie.id){
-    //                 allMoviesPC.pop(i);
-    //                 localStorage.setItem('personalCollection', JSON.stringify(allMoviesPC));
-    //             }
-    //         }
-
-
-    //         //Если в LS есть фильмы, отрисовываю их карточки
-    //         if(allMoviesPC!=null){
-    //             for(let i=0; i<allMoviesPC.length; i++){
-    //                 addMovieOnPagePC(allMoviesPC[i]);
-    //             }
-    //         }
-    //     }
-    // }
-
-
+    }
+ 
     //--------------------------------------------------------
     let buttonAddMovieComment = document.createElement('input');
     buttonAddMovieComment.type = "button";
@@ -392,7 +356,7 @@ function addMovieOnPage(movie, collection){
 
         let commentTitleMovie = document.createElement('p');
         commentTitleMovie.setAttribute("class", "comment-title-movie");
-        commentTitleMovie.textContent = "Отзыв к фильму " + movie.titleMovie;
+        commentTitleMovie.textContent = "Отзыв к фильму " + titleMovie;
 
         let commentInputName = document.createElement('input');
         commentInputName.setAttribute("class", "comment-input-name");
@@ -460,7 +424,7 @@ function addMovieOnPage(movie, collection){
                         this.id = commentCollection[commentCollection.length-1].id + 1;
                     }
                     else this.id = 0;
-                    this.movieId = movie.id;
+                    this.movieId = id;
                     if(document.getElementById("commentInputName").value.trim()=="") this.name = "Аноним";
                     else this.name = document.getElementById("commentInputName").value.trim();
 
@@ -491,8 +455,6 @@ function addMovieOnPage(movie, collection){
         commentBlock.appendChild(commentButtonReady);
         commentBlock.appendChild(commentButtonReset);
     } 
-    //--------------------------------------------------------
-
 
     //--------------------------------------------------------
     let buttonShowComments = document.createElement('input');
@@ -538,12 +500,15 @@ let commentsBlock = document.createElement('div');
 
 function addCommentsOnPage(movie){
 
+    //деструктуризация объекта movie
+    let {id, titleMovie} = movie;
+
     let allCommentsInLS =  JSON.parse(localStorage.getItem('commentCollection'));
     let commentsThisMovie = [];
 
     if(allCommentsInLS!=null){
         for(let i=0; i<allCommentsInLS.length; i++) {
-            if(allCommentsInLS[i].movieId == movie.id) commentsThisMovie.push(allCommentsInLS[i]);
+            if(allCommentsInLS[i].movieId == id) commentsThisMovie.push(allCommentsInLS[i]);
         }
     }
 
@@ -552,7 +517,7 @@ function addCommentsOnPage(movie){
     
     let commentTitleMovie = document.createElement('p');
     commentTitleMovie.setAttribute("class", "comment-title-movie");
-    commentTitleMovie.textContent = "Отзывы к фильму " + movie.titleMovie;
+    commentTitleMovie.textContent = "Отзывы к фильму " + titleMovie;
     commentsBlock.appendChild(commentTitleMovie);
 
     
@@ -581,22 +546,21 @@ function addCommentsOnPage(movie){
 }
 
 function addCommentOnPage(comment){
+    //Деструктуризация объекта comment
+    let { id, name, job, text, grade} = comment;
+
     let commentName = document.createElement('p');
     commentName.setAttribute("class", "comment-name");
-    commentName.textContent = "(" + comment.grade + ") " + comment.name + ", " + comment.job;
+    commentName.textContent = "(" + grade + ") " + name + ", " + job;
     commentsBlock.appendChild(commentName);
 
     let commentText = document.createElement('p');
     commentText.setAttribute("class", "comment-text");
-    commentText.textContent = comment.text;
+    commentText.textContent = text;
     commentsBlock.appendChild(commentText);
 }
 
-
-
-
 //import {filter} from './filter.js';
-filter();
 
 function filter(){
     document.querySelectorAll(".card-movie").forEach(e => e.remove());

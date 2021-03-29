@@ -519,10 +519,12 @@ input[type=button]:active{
 }
 .comment-text{
     margin-left: 10px;
+    margin-right: 23px;
     color: #f4fffdd1;
     font: 25px Graphik,sans-serif;
     margin-top: 0px;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 
