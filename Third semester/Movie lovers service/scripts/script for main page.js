@@ -14,7 +14,6 @@ function addMoviesOnPage(collection){
     }
 }
 
-//import {addMovieOnPage} from './add movie on page.js';
 function addMovieOnPage(movie){
 
     //деструктуризация объекта movie
@@ -349,6 +348,8 @@ function addMovieOnPage(movie){
     buttonAddMovieComment.value = "Добавить отзыв";
 
     buttonAddMovieComment.onclick = function addComment(){
+        disableScrolling();
+
         let commentBlock = document.createElement('div');
         commentBlock.setAttribute("class", "comment-block");
 
@@ -411,10 +412,12 @@ function addMovieOnPage(movie){
         commentButtonReset.id = "comment-button-reset";
 
         commentButtonReset.onclick = function commentReset(){
+            enableScrolling();
             cardMovie.removeChild(commentBlock);
         }
 
         commentButtonReady.onclick = function addComment(){
+            enableScrolling();
             let commentCollection = [];
 
             class Comment{
@@ -462,6 +465,7 @@ function addMovieOnPage(movie){
     buttonShowComments.value = "Посмотреть отзывы";
 
     buttonShowComments.onclick = function addComment(){
+        disableScrolling();
         addCommentsOnPage(movie);
     } 
     //--------------------------------------------------------
@@ -491,128 +495,11 @@ function addMovieOnPage(movie){
     cardMovie.appendChild(buttonAddMovieComment);
     cardMovie.appendChild(buttonShowComments);
 
-
     containerMain.appendChild(cardMovie);
 }
 
 
-let commentsBlock = document.createElement('div');
 
-function addCommentsOnPage(movie){
 
-    //деструктуризация объекта movie
-    let {id, titleMovie} = movie;
 
-    let allCommentsInLS =  JSON.parse(localStorage.getItem('commentCollection'));
-    let commentsThisMovie = [];
 
-    if(allCommentsInLS!=null){
-        for(let i=0; i<allCommentsInLS.length; i++) {
-            if(allCommentsInLS[i].movieId == id) commentsThisMovie.push(allCommentsInLS[i]);
-        }
-    }
-
-    commentsBlock.setAttribute("class", "comments-block");
-    document.getElementById("card-movie").appendChild(commentsBlock);
-    
-    let commentTitleMovie = document.createElement('p');
-    commentTitleMovie.setAttribute("class", "comment-title-movie");
-    commentTitleMovie.textContent = "Отзывы к фильму " + titleMovie;
-    commentsBlock.appendChild(commentTitleMovie);
-
-    
-    if(commentsThisMovie.length == 0){
-        let commentEmpty = document.createElement('p');
-        commentEmpty.setAttribute("class", "comment-empty");
-        commentEmpty.textContent = "На этот фильм еще нет отзывов! Будьте первым!"
-        commentsBlock.appendChild(commentEmpty);
-    }
-    else if(commentsThisMovie!=null){                                   //Оператор spread
-        for(let i=0; i<commentsThisMovie.length; i++) addCommentOnPage({...commentsThisMovie[i]});
-    }
-
-    let commentsButtonReset = document.createElement('input');
-    commentsButtonReset.type = "button";
-    commentsButtonReset.value = "Отмена";
-    commentsButtonReset.id = "comment-button-reset";
-    commentsBlock.appendChild(commentsButtonReset);
-
-    commentsButtonReset.onclick = function commentsReset(){
-        while (commentsBlock.firstChild) {
-            commentsBlock.removeChild(commentsBlock.firstChild);
-        }
-        document.getElementById("card-movie").removeChild(commentsBlock);
-    }
-}
-
-function addCommentOnPage({name, job, text, grade}){
-    let commentName = document.createElement('p');
-    commentName.setAttribute("class", "comment-name");
-    commentName.textContent = "(" + grade + ") " + name + ", " + job;
-    commentsBlock.appendChild(commentName);
-
-    let commentText = document.createElement('p');
-    commentText.setAttribute("class", "comment-text");
-    commentText.textContent = text;
-    commentsBlock.appendChild(commentText);
-}
-
-//import {filter} from './filter.js';
-
-function filter(){
-    document.querySelectorAll(".card-movie").forEach(e => e.remove());
-    
-    let country = document.getElementById("iCountryFilter").value;
-    let genre = document.getElementById("iGenreFilter").value;
-    let year = document.getElementById("iYearFilter").value;
-    
-    //Получаю коллекцию фильмов из LS
-    let allMoviesInLS =  JSON.parse(localStorage.getItem('generalCollection'));
-    
-    //Отрисовываю из LS карточки тех фильмов, которые соответствуют параметрам
-    if(allMoviesInLS!=null){
-
-        if(country != "Любая" & genre != "Любой" & year != "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                if(allMoviesInLS[i].country == country & allMoviesInLS[i].genre == genre & allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-
-        if(country != "Любая" & genre != "Любой" & year == "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                if(allMoviesInLS[i].country == country & allMoviesInLS[i].genre == genre) addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-
-        if(country != "Любая" & genre == "Любой" & year != "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                if(allMoviesInLS[i].country == country & allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-        if(country != "Любая" & genre == "Любой" & year == "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                if(allMoviesInLS[i].country == country) addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-        if(country == "Любая" & genre != "Любой" & year != "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                if(allMoviesInLS[i].genre == genre & allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-        if(country == "Любая" & genre != "Любой" & year == "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                if( allMoviesInLS[i].genre == genre) addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-        if(country == "Любая" & genre == "Любой" & year != "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                if(allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-        if(country == "Любая" & genre == "Любой" & year == "Любой") {
-            for(let i=0; i<allMoviesInLS.length; i++){
-                addMovieOnPage(allMoviesInLS[i]);
-            }
-        }
-    }
-}

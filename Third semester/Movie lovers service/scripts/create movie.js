@@ -79,38 +79,38 @@ function createMovie(){
 function checkEmptyInput(){
     let res = false;
 
-    // if(document.getElementById("iTitleMovie").value.trim() == ""){
-    //     addMessageError("Вы не заполнили поле Название");
-    //     res = true;
-    // }
-    // if(document.getElementById("iCountry").value.trim() == ""){
-    //     addMessageError("Вы не заполнили поле Страна");
-    //     res = true;
-    // }
-    // if(document.getElementById("iGenre").value.trim() == ""){
-    //     addMessageError("Вы не заполнили поле Жанр");
-    //     res = true;
-    // }
-    // if(document.getElementById("iDirector1").value.trim() == ""){
-    //     addMessageError("Вы не заполнили первое поле Режиссер");
-    //     res = true;
-    // }
-    // if(document.getElementById("iMovieScript").value.trim() == ""){
-    //     addMessageError("Вы не заполнили поле Сценарий");
-    //     res = true;
-    // }
-    // if(document.getElementById("iProducer").value.trim() == ""){
-    //     addMessageError("Вы не заполнили поле Продюсер");
-    //     res = true;
-    // }
-    // if(document.getElementById("iOperator").value.trim() == ""){
-    //     addMessageError("Вы не заполнили поле Оператор");
-    //     res = true;
-    // }
-    // if(document.getElementById("iComposer").value.trim() == ""){
-    //     addMessageError("Вы не заполнили поле Композитор");
-    //     res = true;
-    // }
+    if(document.getElementById("iTitleMovie").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Название");
+        res = true;
+    }
+    if(document.getElementById("iCountry").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Страна");
+        res = true;
+    }
+    if(document.getElementById("iGenre").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Жанр");
+        res = true;
+    }
+    if(document.getElementById("iDirector1").value.trim() == ""){
+        addMessageError("Вы не заполнили первое поле Режиссер");
+        res = true;
+    }
+    if(document.getElementById("iMovieScript").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Сценарий");
+        res = true;
+    }
+    if(document.getElementById("iProducer").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Продюсер");
+        res = true;
+    }
+    if(document.getElementById("iOperator").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Оператор");
+        res = true;
+    }
+    if(document.getElementById("iComposer").value.trim() == ""){
+        addMessageError("Вы не заполнили поле Композитор");
+        res = true;
+    }
     return res;
 }
 

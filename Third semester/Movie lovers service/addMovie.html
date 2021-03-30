@@ -23,12 +23,12 @@
 			<form id="formMovie"> 
                 <label class = "label-text">
                 Название фильма                                               
-                    <input id = "iTitleMovie" type = "text" placeholder = "..." >
+                    <input id = "iTitleMovie" type = "text" placeholder = "..." required = "required">
                 </label>
 
 				<label class = "label-text" >
 					Страна
-                    <select id="iCountry">
+                    <select id="iCountry" >
 						<option value = "Аргентина">Аргентина</option>
 						<option value = "Армения">Армения</option>
 						<option value = "Белоруссия">Белоруссия</option>
@@ -107,11 +107,13 @@
                         <option value = "Комедия">Комедия</option>
                         <option value = "Мелодрама">Мелодрама</option>
                         <option value = "Музыкальный фильм">Музыкальный фильм</option>
+                        <option value = "Мультфильм">Мультфильм</option>
                         <option value = "Нуар">Нуар</option>
                         <option value = "Политический фильм">Политический фильм</option>
                         <option value = "Документальный фильм">Документальный фильм</option>
                         <option value = "Приключенческий фильм">Приключенческий фильм</option>
                         <option value = "Сказка">Сказка</option>
+                        <option value = "Сериал">Сериал</option>
                         <option value = "Трагедия">Трагедия</option>
                         <option value = "Трагикомедия">Трагикомедия</option>
                         <option value = "Триллер">Триллер</option>
@@ -123,35 +125,38 @@
 
                 <label class = "label-text">
                     Режиссер (можно несколько) 
-                    <input id = "iDirector1" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр"> 
+                    <input id = "iDirector1" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр" required = "required"> 
                     <input id = "iDirector2" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
                     <input id = "iDirector3" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр"> 
                 </label>
 
                 <label class = "label-text">
                     Сценарий 
-                    <textarea id = "iMovieScript" name="text"  title = "Поле не должно начинаться с пробела или полностью состоять из пробелов"></textarea>
+                    <textarea id = "iMovieScript" name="text"  title = "Поле не должно начинаться с пробела или полностью состоять из пробелов" required = "required"></textarea>
                 </label>
 
                 <label class = "label-text">
                     Продюсер
-                    <input id = "iProducer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
+                    <input id = "iProducer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр" required = "required">
                 </label>
 
                 <label class = "label-text">
                     Оператор
-                    <input id = "iOperator" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
+                    <input id = "iOperator" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр" required = "required">
                 </label>
 
                 <label class = "label-text">
                     Композитор
-                    <input id = "iComposer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр">
+                    <input id = "iComposer" type = "text" placeholder = "..."   pattern = "^[A-Za-zА-Яа-яЁё\s]+$"  title = "Поле не должно содержать цифр" required = "required">
                 </label>
 
                 <label class = "label-text">
                     Бюджет
-                    <input id = "iBudget"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа">
+                    <input id = "iBudget"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа" required = "required">
                     <select id = "iBudgetCurrency">
+                        <option value = "млн долларов">млн долларов</option>
+                        <option value = "млн евро">млн евро</option>
+                        <option value = "млн рублей">млн рублей</option>
                         <option value = "долларов">долларов</option>
                         <option value = "евро">евро</option>
                         <option value = "рублей">рублей</option>
@@ -160,8 +165,11 @@
 
                 <label class = "label-text">
                     Мировые сборы
-                    <input id = "iMovieBoxOffice"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа">
+                    <input id = "iMovieBoxOffice"  placeholder = "..." type = "number" min = "0"  step = "1"  title = "Поле должно содержать только целые числа" required = "required">
                     <select id = "iMovieBoxOfficeCurrency">
+                        <option value = "млн долларов">млн долларов</option>
+                        <option value = "млн евро">млн евро</option>
+                        <option value = "млн рублей">млн рублей</option>
                         <option value = "долларов">долларов</option>
                         <option value = "евро">евро</option>
                         <option value = "рублей">рублей</option>
@@ -181,21 +189,21 @@
 
                 <label class = "label-text">
                     Длительность
-                    <input id = "iHours"  placeholder="2 ч" type = "number" min = "0"  step = "1">	
-                    <input id = "iMinutes"  placeholder="30 м" type = "number" min = "0" max = "59"  step = "1">	
-                    <input id = "iSeconds" placeholder="50 с" type = "number" min = "0" max = "59"  step = "1">
+                    <input id = "iHours"  placeholder="2 ч" type = "number" min = "0"  step = "1" required = "required">	
+                    <input id = "iMinutes"  placeholder="30 м" type = "number" min = "0" max = "59"  step = "1" required = "required">	
+                    <input id = "iSeconds" placeholder="50 с" type = "number" min = "0" max = "59"  step = "1" required = "required">
                 </label>
 
                 <label class = "label-text" for="photo">
                     Постер (файл может быть только формата jpeg)
-				    <input type = "text" id="iPhoto" name="photo" placeholder="https://...">	
+				    <input type = "url" id="iPhoto" name="photo" placeholder="https://..." required = "required"> 	
                 </label>
 
                 <label class = "label-text">
                     Дата выхода
-				    <input id = "iDay"  placeholder="1" type = "number" min = "1" max = "31"  step = "1" title = "Поле должно содержать числа от 1 до 31">	
-                    <input id = "iMonth"  placeholder="1" type = "number" min = "1" max = "12"  step = "1" title = "Поле должно содержать числа от 1 до 12">	
-                    <input id = "iYear" placeholder="1970" type = "number" min = "1930" max = "2030"  step = "1" title = "Поле должно содержать числа от 1800 до 2100">	
+				    <input id = "iDay"  placeholder="1" type = "number" min = "1" max = "31"  step = "1" title = "Поле должно содержать числа от 1 до 31" required = "required">	
+                    <input id = "iMonth"  placeholder="1" type = "number" min = "1" max = "12"  step = "1" title = "Поле должно содержать числа от 1 до 12" required = "required">	
+                    <input id = "iYear" placeholder="1970" type = "number" min = "1930" max = "2030"  step = "1" title = "Поле должно содержать числа от 1800 до 2100" required = "required">	
                 </label>
 
                 <button type = "submit">Добавить</button>
