@@ -47,7 +47,7 @@ class Movie{
         this.seconds = document.getElementById("iSeconds").value.trim(), 
         this.photo = document.getElementById("iPhoto").value.trim(),
         this.date = new Date(document.getElementById("iYear").value.trim(), document.getElementById("iMonth").value.trim(), document.getElementById("iDay").value.trim()),
-        //yearF - свойство для работы фильтра
+        //yearF - поле для работы фильтра
         this.yearF = document.getElementById("iYear").value.trim()
     }
 }

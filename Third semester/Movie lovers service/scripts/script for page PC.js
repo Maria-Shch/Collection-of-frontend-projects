@@ -326,7 +326,7 @@ function addMovieOnPage(movie){
         //После удаления помещаю коллекцию обратно в LS 
         for(let i=0; i<allMoviesPC.length; i++){
             if(allMoviesPC[i].id == id){
-                allMoviesPC.pop(i);
+                allMoviesPC.splice(i, 1);
                 localStorage.setItem('personalCollection', JSON.stringify(allMoviesPC));
             }
         }
