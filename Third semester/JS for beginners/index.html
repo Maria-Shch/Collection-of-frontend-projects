@@ -17,6 +17,8 @@
 			<!--<a href = "#Кнопка">Чудо-кнопка</a>  
 				<div id = "div-as-hr"></div>-->
 				<a href = "#Задачи2">Новые задачи</a>  
+				<div id = "div-as-hr"></div>
+				<a href = "#Собаки">Собачье API</a>
 			</div>
             <div id = "user-name">
                 <!--Сюда добавляется имя из LocalStorage-->
@@ -812,6 +814,15 @@
 					<input type = "button" id = "buttonInvisibleClose" value = "Понятно"></input>
 				</dialog>
 			</fieldset>
+
+			<fieldset class = "container-main__fieldest"><!--Кнопка для получения фотки собаки со стороннего API-->
+				<legend class = "legend-title"><a name="Собаки"></a>Собачье API</legend>
+				<div class="div-super-button">
+					<input type = "button" id = "buttonShowDog" value = "Хочу фото собаки"></input>
+				</div>
+				<div class="" id="div-img-dog">
+				</div>
+			</fieldset>
 		</div>
 	</main>
 	<footer>
@@ -843,5 +854,6 @@
 	<script src = "scripts/most common symbol.js"></script>
 	<script src = "scripts/symbol replacement.js"></script>
 	<script src = "scripts/anagram.js"></script>
+	<script src = "scripts/dogsAPI.js"></script>
 </body> 
 </html>
