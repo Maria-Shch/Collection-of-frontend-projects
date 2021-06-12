@@ -490,7 +490,8 @@ img{
 }
 
 .divImgDog{
-	width: 500px;
+	max-width: 500px;
+	max-height: 400px;
 }
 #div-img-dog{
 	display: flex;
